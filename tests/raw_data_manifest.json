@@ -1,0 +1,14 @@
+{
+  "README.md": "be1e6b05dd26da32f6fca944a2549c6a7d0e44d1976992d901c18c8d2a008564",
+  "authorizations.csv": "f0820b1f739a02c06cfad7f86631ba35936c2a0eaf62444569bf34e4f847e672",
+  "billing_basics.md": "445b8e268fdf45a135373b0883da6f124b499bb86529cdf96481ec9511b9248a",
+  "claims_history.csv": "1ad66f71bb83f41b9a1fb5d838b5b8d543913d24d5caca205d0ee7bf449b8bcc",
+  "claims_to_check.csv": "92f846a615d03e23a2d93ee6ebf902f5c8cac66744235b00830a5b9bb61332ee",
+  "denial_codes.md": "ca7b1cc1961458cccc745d82d1cb4594b82f2b5f05b99e9e4986331e14db11c4",
+  "evv_visits.csv": "0ce8822eee24d5004569b748e06e537fbec2d0fbce6197d3bc74de43f87ecc68",
+  "payers/PY01_northwind_bulletin_2026-07.md": "495bf0edb0e88c8bc67ad762a98c3265c99836ec0a42dedff8dca877070de74a",
+  "payers/PY01_northwind_provider_manual.md": "bd7c19d8cd4193251b6865a672dad567d1e7d3c6782a50bd005b3c43303e2c27",
+  "payers/PY02_harbor_bulletin_2026-08.md": "3fa73a4429a8a3b16c151506e6a2fa145d8f9ed03e9af6fe144e5a7bc22a3862",
+  "payers/PY02_harbor_provider_manual.md": "804d09485aa9ef59dd0a9243631d17d4e062931a4946eeb30f9e74eb3ffb940a",
+  "payers/PY03_summit_provider_manual.md": "822ab41e8d9e2fb60a6dabf6114b38388cbdb3231695c6f0b884c58c32e027fd"
+}
