@@ -27,7 +27,7 @@ You are building **ClaimCheck**, a pre-submission claim checker for home-care ag
 - Seeds fixed (`random_state=42`). Paths resolved relative to the project root, which contains folder names with spaces; always quote paths.
 
 ## How to work
-- Do one milestone from `docs/TASKS.md` at a time. At the end of each: run `pytest`, report what was done, the numbers, and anything surprising, then **stop and wait** for the user.
+- Do one milestone from `docs/TASKS.md` at a time. At the end of each: run `pytest`, report what was done, the numbers, and anything surprising, then **stop and wait** for the user. (From 2026-11-24 the unit is a **stage** of the 80/20 plan at the top of `docs/TASKS.md`.)
 - When a rule ambiguity is resolved on the dev split, record the evidence (counts) in `docs/findings.md` and update `docs/payer_rules.md` + `rules_config.yaml` together.
 - Append short notes to `docs/ai_log.md` when you make a non-obvious choice, hit a mistake, or the user corrects you. This feeds the presentation section "How you worked with AI".
 - Prefer simple and explainable over clever. The time budget is 2 to 4 hours in total.

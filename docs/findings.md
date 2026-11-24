@@ -56,6 +56,36 @@ Status of each: **open**, or **resolved** with the evidence.
 | 9 | Data quirks (payer names, date formats) | resolved (M1) | 6 payer aliases, 2 date formats, whitespace/case in `service_code` and `modifier`; see "Data quirks" | Explicit alias map, two explicit date formats (US = month/day/year), strip + upper-case codes; unknown values raise |
 | 10 | Ordering on the to-check set | open | | |
 
+## Stage 1 baseline: six stateless rules, placeholder precedence (dev, 2,681 claims)
+Rules D07, D08, D03, D01, D04, D09 exactly as documented, nothing tuned. Full report: `outputs/metrics_dev.md`.
+
+| Measure | Dev |
+|---|---|
+| Paid/denied accuracy | 93.3% |
+| Denied precision / recall | 100.0% / 76.6% |
+| False alarms (predicted denied, was paid) | 0 |
+| Missed denials | 180 |
+| Exact-code accuracy | 91.1% (ceiling 98.1%: 51 D99) |
+
+- **No false alarms.** Every one of the 589 claims flagged by a stateless rule was really denied, so the documented rules and the default choices (`>` filing boundary, sum-then-round) fit the dev data.
+- **The 180 missed denials are the codes not built yet:** D06 55, D99 49, D02 40, D05 19, D10 17.
+- **The placeholder precedence is wrong (evidence for question 8).** 61 dev claims were denied but given the wrong code. The pattern: when EVV is missing or short *and* another rule is broken, the payer reports the EVV code.
+
+| Payer reported | We predicted | Dev claims |
+|---|---|---|
+| D09 | D03 | 18 |
+| D01 | D03 | 10 |
+| D10 | D09 | 8 |
+| D02 | D03 | 5 |
+| D01 | D07 | 4 |
+| D09 | D07 | 4 |
+| D09 | D08 | 4 |
+| D01 | D08 | 3 |
+| D99 | D09 | 2 |
+| D09 | D04 | 1 |
+
+  So D01 and D09 outrank D03, D07, D08 and D04, and D10 and D02 outrank at least D09 and D03. The order is fixed in stage 3, once D02, D05 and D06 exist.
+
 ## Rule decisions (M5)
 _One entry per change: alternatives tried, dev metrics before/after, what was kept._
 

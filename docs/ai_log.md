@@ -18,3 +18,18 @@ Short notes on non-obvious choices, mistakes and user corrections. Feeds the pre
 - **`remark` is split off.** `load_claims` never returns it; `load_remarks()` is a separate, clearly labelled function for discovery only.
 - **Payer aliases live in `data.py`, not `rules_config.yaml`.** They are a data-cleaning mapping, not a payer rule parameter. Flag for the user if they prefer them in config.
 - **No tuning happened here:** profiling looked at formats and counts only, not at which claims were denied, so the dev/test split (M2) is not compromised.
+
+## M2: Split (2026-11-24)
+- **Split saved and reused.** `outputs/split.csv` (2,681 dev / 1,149 test) is written once; a rerun loads it. If the file no longer matches the history claims the loader raises, so the test set can never be reshuffled silently. A test checks the saved file equals the seed-42 split.
+- **Row-order independent.** The history is sorted by `claim_id` before splitting, so the split does not depend on how the CSV was read.
+- **Small test classes.** Test has only 8 D05, 10 D10 and 11 D04 claims, so per-code test metrics for these move in steps of about 10 points. Report counts next to percentages.
+- **User asked mid-milestone for a time audit and an 80/20 partial build.** Finished M2 (already nearly done) and answered with the audit before starting anything else, since cutting scope changes `docs/TASKS.md` and needs the user's decision.
+
+## Stage 1 of the 80/20 plan: stateless rules (2026-11-24)
+- **Plan change agreed with the user.** The audit showed M3 to M5 were 100 of the remaining 160 budgeted minutes, while 80% of predictable denials need no timeline. `docs/TASKS.md` now has a staged plan; review points went from six to three.
+- **Rules built straight from the documents, scored on dev, nothing tuned.** Result: 0 false alarms, 93.3% paid/denied accuracy. This is a useful check on the AI-written rule extraction: if a threshold or date had been misread, false alarms would show.
+- **Did not fix the precedence yet, although the dev errors already show it is wrong.** Reordering before D02/D05/D06 exist would mean doing it twice; the evidence is recorded in `findings.md` for stage 3.
+- **PY03 amendment-3 rule is in the config but switched off** (`enabled: false`), because its scope is unknown. Predicting it bluntly would trade missed D10s for false alarms on a rule not in any payer document.
+- **Leak guard.** Claims are reduced to an allow-list of fields before any rule sees them, and a test uses a spy dict to prove no rule reads `remark`, `status` or `denial_code`.
+- **Bug caught on first run:** a dataclass default shared one mutable `EvvDay` object; Python 3.14 rejects this. Switched to `default_factory`.
+- **Dropped `explain.py`.** Each rule builds its own message and fix, since the LLM wording path is out of scope now.
