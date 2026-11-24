@@ -152,3 +152,11 @@ def test_claim_close_to_a_limit_is_sent_to_review():
     auths.loc[auths["auth_id"] == "AUTH1", "units_authorized"] = 17   # 1 unit left after C1
     out = predict.predict_claims(claims.iloc[:1], evv, auths).iloc[0]
     assert out["status"] == "paid" and out["needs_review"] and out["action"] == "review"
+
+
+def test_single_large_claim_with_nothing_else_that_day_is_not_sent_to_review():
+    claims, evv, auths = _frames()
+    big = claims.iloc[:1].assign(units=16)
+    evv = evv.assign(clock_out=datetime(2026, 9, 9, 16, 0))   # 8 hours = 32 units of evidence
+    out = predict.predict_claims(big.assign(units=32), evv, auths).iloc[0]
+    assert out["status"] == "paid" and not out["needs_review"] and out["action"] == "submit"

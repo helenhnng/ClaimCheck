@@ -14,7 +14,7 @@ from dataclasses import dataclass
 import pandas as pd
 
 from claimcheck import paths, review
-from claimcheck.config import default_config
+from claimcheck.config import default_config, precedence_for
 from claimcheck.data import load_auths, load_claims, load_evv
 from claimcheck.evv import NO_EVV, EvvDay, build_evv_index
 from claimcheck.rules import ALLOWED_CLAIM_FIELDS, ClaimContext, evaluate_rules, pick_hit
@@ -79,7 +79,7 @@ def context_for(claim: dict, lookups: Lookups, state: TimelineState | None = Non
 def decide(claim: dict, ctx: ClaimContext, cfg: dict) -> dict:
     """One detailed prediction row for one claim."""
     hits = evaluate_rules(claim, ctx, cfg)
-    chosen = pick_hit(hits, cfg["global"]["precedence"])
+    chosen = pick_hit(hits, precedence_for(cfg, claim["payer_id"]))
     reasons = review.review_reasons(claim, ctx, chosen, cfg)
     return {
         "claim_id": claim["claim_id"],

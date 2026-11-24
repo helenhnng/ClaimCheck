@@ -40,3 +40,17 @@ Short notes on non-obvious choices, mistakes and user corrections. Feeds the pre
 - **Authorization balance is not checked when the authorization does not fit the claim** (wrong patient, service or dates). The balance of the wrong authorization says nothing, and it would add noise to the precedence evidence.
 - **Left one false alarm alone** (a paid claim we call D02). One case is not enough to change a rule.
 - **Precedence evidence is now complete but the order is not changed yet**, to keep stage 2 a clean before/after of adding the three rules.
+
+## Stage 3: code order, D10, final score (2026-11-24)
+- **Reordered the plan to protect the test score.** The agreed plan had the D10 investigation in stage 4, after scoring test. That would have meant changing a rule after the one allowed test score, so D10 was investigated on dev first.
+- **D10 scope found with one cross-tab.** The remark column (discovery only, dev only) pointed at "whole hours"; splitting non-whole-hour PY03 claims by month showed June 50 paid / 0 denied and July onward 0 paid. An effective date, not an agency rule. The planning notes had three candidate explanations; the data picked one cleanly.
+- **Code order turned out to be payer-specific.** A single order left D09 against D07/D08 split 6 to 4. Breaking it down by payer removed every contradiction: PY03 reports authorization codes first. Lesson: a "noisy" pattern was a missing variable.
+- **Dev reached its ceiling, which is a warning sign for overfitting.** The check was the held-back test set: 98.4% paid/denied on both, 98.0% vs 98.1% exact code. The rules generalise.
+- **Did not act on a test error.** Test showed one D03-over-D05 case that contradicts the chosen order. Left unchanged and recorded, because tuning on test is against the project rules.
+- **One post-test change, to review routing only:** lone large claims were being sent to review for being "near the daily maximum". Fixed and disclosed in `findings.md`; no status or code changed.
+- **Not built:** Streamlit screen (stage 4). `docs/design.md` still describes the full cascade, including the model and language-model tiers that were dropped.
+
+## Stage 4: demo screen (2026-11-24)
+- **One page, read-only.** Totals by action and code, a filterable claim list, and a claim detail with verdict, rule, source, fix, and the EVV visits and authorization behind it. It reads the output files; it does not recompute or change anything.
+- **Could not look at the screen myself.** The in-app browser preview was blocked from the Desktop folder by macOS permissions. Verified instead by running the page headlessly (Streamlit's test runner) through the code and action filters, and by checking the local server answers. Layout and appearance were therefore not checked by the AI and need a human look before the demo.
+- **Added three headless tests** so the screen cannot silently break if the output columns change.

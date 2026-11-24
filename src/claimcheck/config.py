@@ -20,6 +20,11 @@ class ConfigError(ValueError):
     """The rules config is missing something or holds an unknown value."""
 
 
+def _check_precedence(order: list[str], where: str) -> None:
+    if set(order) != KNOWN_CODES or len(order) != len(KNOWN_CODES):
+        raise ConfigError(f"{where}: precedence must list each of D01 to D10 exactly once")
+
+
 def validate(cfg: dict) -> dict:
     for key in ("global", "payers"):
         if key not in cfg:
@@ -29,10 +34,10 @@ def validate(cfg: dict) -> dict:
         raise ConfigError(f"evv_aggregation must be one of {sorted(AGGREGATIONS)}")
     if g["filing_boundary"] not in FILING_BOUNDARIES:
         raise ConfigError(f"filing_boundary must be one of {sorted(FILING_BOUNDARIES)}")
-    unknown = set(g["precedence"]) - KNOWN_CODES
-    if unknown or len(set(g["precedence"])) != len(g["precedence"]):
-        raise ConfigError(f"precedence has unknown or repeated codes: {sorted(unknown)}")
+    _check_precedence(g["precedence"], "global")
     for payer_id, payer in cfg["payers"].items():
+        if "precedence" in payer:
+            _check_precedence(payer["precedence"], payer_id)
         if payer["rounding"] not in ROUNDING_METHODS:
             raise ConfigError(f"{payer_id}: rounding must be one of {sorted(ROUNDING_METHODS)}")
         for rule in payer.get("modifier_rules") or []:
@@ -61,6 +66,11 @@ def payer_config(cfg: dict, payer_id: str) -> dict:
         return cfg["payers"][payer_id]
     except KeyError:
         raise ConfigError(f"No rules configured for payer {payer_id!r}") from None
+
+
+def precedence_for(cfg: dict, payer_id: str) -> list[str]:
+    """The code order for this payer: its own if it has one, else the global order."""
+    return payer_config(cfg, payer_id).get("precedence") or cfg["global"]["precedence"]
 
 
 def _in_window(entry: dict, dos: date) -> bool:

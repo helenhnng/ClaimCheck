@@ -120,7 +120,10 @@ ALL:
 - **4 PY02 daily max:** confirmed. Submission order, paid units only, all services.
 - **9 Data quirks:** resolved in cleaning.
 - **10 Ordering:** confirmed. History and to-check claims form one timeline.
-- **1, 5, 6, 7, 8:** still open.
+- **1 Filing boundary:** deny when days > limit (the limit day itself is paid).
+- **5, 6 Modifiers:** no rule beyond PY02 T1019. `U1` on PY01 and PY03 claims is ignored.
+- **7 PY03 contract rule:** D10 when units are not a multiple of 4, for dates of service from 2026-07-01, all agencies.
+- **8 Precedence:** D01, D09, D07, D08, D10, D05, D04, D06, D02, D03. PY03 reports D07, D08 and D10 ahead of D09.
 
 ---
 
@@ -141,8 +144,8 @@ PY03:
     - id: amendment_3_whole_hours
       check: units % 4 == 0
       denial_code: D10
-      effective_from: TBC   # earliest remark DOS 2026-07-01, to be confirmed
-      agencies: TBC         # all, or a subset, to be confirmed
+      effective_from: 2026-07-01   # confirmed on dev: June claims all paid, none from July
+      agencies: all                # no agency pattern on dev
 ```
 
 ### D99 (other / manual review)

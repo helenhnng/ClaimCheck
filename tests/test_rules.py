@@ -261,3 +261,46 @@ def test_rules_never_read_remark_or_outcome_fields():
     assert spy.read, "the spy saw no reads"
     assert spy.read <= rules.ALLOWED_CLAIM_FIELDS
     assert not spy.read & {"remark", "status", "denial_code", "paid_amount"}
+
+
+# --- PY03 contract amendment 3 (D10) and payer-specific code order ------------
+
+@pytest.mark.parametrize(
+    "dos, units, denied",
+    [
+        (date(2026, 6, 30), 18, False),   # before the amendment takes effect
+        (date(2026, 7, 1), 18, True),     # first day: 18 units is 4.5 hours
+        (date(2026, 7, 1), 16, False),    # whole hours
+        (date(2026, 9, 9), 17, True),
+    ],
+)
+def test_summit_whole_hours_rule(dos, units, denied):
+    c = claim(payer_id="PY03", date_of_service=dos, submitted_date=dos + timedelta(days=3), units=units)
+    hit = rules.check_contract(c, ctx(), CFG)
+    assert (hit is not None) == denied
+    if denied:
+        assert hit.denial_code == "D10" and "inferred" in hit.citation
+
+
+def test_whole_hours_rule_is_summit_only():
+    for payer in ("PY01", "PY02"):
+        assert rules.check_contract(claim(payer_id=payer, units=17), ctx(), CFG) is None
+
+
+def test_code_order_differs_for_summit():
+    from claimcheck.config import precedence_for
+    default, summit = precedence_for(CFG, "PY01"), precedence_for(CFG, "PY03")
+    assert precedence_for(CFG, "PY02") == default
+    assert default[0] == summit[0] == "D01"
+    assert default.index("D09") < default.index("D07")      # EVV units before authorization
+    assert summit.index("D07") < summit.index("D09")        # Summit: authorization first
+    assert summit.index("D10") < summit.index("D09")
+    assert default[-1] == summit[-1] == "D03"
+
+
+def test_missing_evv_outranks_late_filing_end_to_end():
+    from claimcheck.config import precedence_for
+    late_no_evv = claim(submitted_date=DOS + timedelta(days=200))
+    hits = rules.evaluate_rules(late_no_evv, ctx(minutes=()), CFG)
+    assert {h.denial_code for h in hits} == {"D01", "D03"}
+    assert rules.pick_hit(hits, precedence_for(CFG, "PY01")).denial_code == "D01"

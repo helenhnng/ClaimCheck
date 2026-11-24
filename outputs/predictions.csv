@@ -56,10 +56,10 @@ C019227,paid,
 C019230,paid,
 C019231,paid,
 C019232,paid,
-C019233,paid,
+C019233,denied,D10
 C019240,paid,
 C019248,paid,
-C019250,denied,D03
+C019250,denied,D09
 C019259,denied,D03
 C019263,paid,
 C019272,paid,
@@ -85,7 +85,7 @@ C019378,paid,
 C019379,paid,
 C019382,paid,
 C019383,paid,
-C019388,denied,D09
+C019388,denied,D10
 C019391,paid,
 C019392,paid,
 C019394,denied,D01
@@ -133,7 +133,7 @@ C019566,denied,D01
 C019573,paid,
 C019577,denied,D09
 C019581,paid,
-C019588,paid,
+C019588,denied,D10
 C019591,paid,
 C019597,paid,
 C019599,denied,D01
@@ -166,9 +166,9 @@ C019733,paid,
 C019734,paid,
 C019741,paid,
 C019750,paid,
-C019757,denied,D09
-C019762,denied,D03
-C019771,paid,
+C019757,denied,D10
+C019762,denied,D02
+C019771,denied,D10
 C019777,paid,
 C019781,paid,
 C019787,paid,
@@ -177,7 +177,7 @@ C019794,denied,D03
 C019795,paid,
 C019804,denied,D09
 C019810,paid,
-C019817,paid,
+C019817,denied,D10
 C019819,paid,
 C019826,paid,
 C019834,paid,
@@ -193,7 +193,7 @@ C019878,denied,D07
 C019880,denied,D01
 C019882,paid,
 C019885,denied,D03
-C019890,denied,D09
+C019890,denied,D10
 C019893,paid,
 C019897,denied,D07
 C019900,denied,D09
@@ -229,7 +229,7 @@ C020020,paid,
 C020029,paid,
 C020036,paid,
 C020045,denied,D03
-C020051,denied,D03
+C020051,denied,D10
 C020052,paid,
 C020059,paid,
 C020061,paid,
@@ -240,7 +240,7 @@ C020087,paid,
 C020096,denied,D08
 C020100,paid,
 C020104,paid,
-C020108,paid,
+C020108,denied,D10
 C020113,paid,
 C020116,paid,
 C020118,denied,D02
@@ -290,7 +290,7 @@ C020352,paid,
 C020358,paid,
 C020364,paid,
 C020365,paid,
-C020368,denied,D02
+C020368,denied,D10
 C020371,paid,
 C020379,paid,
 C020388,paid,
@@ -320,7 +320,7 @@ C020511,paid,
 C020515,denied,D07
 C020516,denied,D01
 C020523,paid,
-C020531,denied,D09
+C020531,denied,D10
 C020532,paid,
 C020537,denied,D07
 C020546,paid,
@@ -340,7 +340,7 @@ C020623,denied,D06
 C020626,paid,
 C020633,paid,
 C020637,paid,
-C020639,paid,
+C020639,denied,D10
 C020648,paid,
 C020651,paid,
 C020658,paid,
@@ -360,7 +360,7 @@ C020730,paid,
 C020734,paid,
 C020735,denied,D06
 C020741,paid,
-C020743,paid,
+C020743,denied,D10
 C020745,denied,D03
 C020748,denied,D01
 C020752,denied,D01
@@ -374,7 +374,7 @@ C020792,denied,D03
 C020798,paid,
 C020807,paid,
 C020816,paid,
-C020822,denied,D05
+C020822,denied,D10
 C020830,paid,
 C020831,paid,
 C020836,denied,D01
@@ -403,7 +403,7 @@ C020931,denied,D01
 C020932,denied,D09
 C020934,paid,
 C020938,denied,D09
-C020947,denied,D03
+C020947,denied,D09
 C020955,paid,
 C020959,paid,
 C020964,paid,
@@ -472,10 +472,10 @@ C021275,paid,
 C021276,paid,
 C021285,denied,D01
 C021287,denied,D02
-C021292,denied,D03
+C021292,denied,D02
 C021301,paid,
 C021302,paid,
-C021308,denied,D09
+C021308,denied,D10
 C021310,paid,
 C021316,paid,
 C021325,paid,
@@ -517,8 +517,8 @@ C021675,denied,D05
 C021680,denied,D05
 C021682,denied,D05
 C021691,denied,D05
-C021700,denied,D05
-C021703,denied,D05
+C021700,denied,D09
+C021703,denied,D09
 C021707,denied,D05
 C021709,denied,D05
 C021718,denied,D05
@@ -526,13 +526,13 @@ C021724,denied,D05
 C021727,paid,
 C021731,paid,
 C021733,paid,
-C021742,denied,D03
+C021742,denied,D10
 C021747,paid,
 C021748,paid,
 C021753,paid,
 C021755,paid,
 C021761,paid,
-C021766,denied,D09
+C021766,denied,D10
 C021769,paid,
 C021770,paid,
 C021774,paid,

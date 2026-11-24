@@ -10,13 +10,14 @@ global:
   unit_minutes: 15
   evv_valid_statuses: [verified]             # billing_basics.md: only verified visits count
   evv_pending_statuses: [manual_edit_pending] # not a denial yet: advise "hold"
-  evv_aggregation: sum_then_round            # TBC: alternative is round_then_sum
-  filing_boundary: gt                        # TBC: deny if days > limit ("gt") or >= limit ("ge")
+  evv_aggregation: sum_then_round            # alternative round_then_sum gives identical dev results
+  filing_boundary: gt                        # confirmed on dev: day = limit is paid, limit + 1 is denied
   duplicate_key: [payer_id, patient_id, service_code, date_of_service]
   duplicate_frequency_codes: [1]             # frequency 7 (corrected claim) is never a duplicate
   near_limit_units: 2                        # review if within this many units of a limit
-  # TBC: which code the payer reports when several rules are broken (placeholder order).
-  precedence: [D07, D08, D05, D03, D01, D04, D09, D02, D06, D10]
+  # Which code the payer reports when several rules are broken. Set from dev claims that
+  # break 2+ rules (docs/findings.md, "Code order"). A payer may override it below.
+  precedence: [D01, D09, D07, D08, D10, D05, D04, D06, D02, D03]
 
 payers:
   PY01:
@@ -26,7 +27,7 @@ payers:
     timely_filing:
       - {dos_from: null, dos_to: 2026-07-31, days: 30, citation: "PY01 Manual §6.1"}
       - {dos_from: 2026-08-01, dos_to: null, days: 45, citation: "PY01 Manual §6.1 + Bulletin 2026-07"}
-    modifier_rules: []                       # none documented. TBC: PY01 claims carry U1
+    modifier_rules: []                       # none documented; dev confirms U1 on PY01 is ignored
     daily_max_units: null
     contract_rules: []
     citations:
@@ -58,6 +59,8 @@ payers:
   PY03:
     name: Summit Care Partners
     rounding: floor                          # partial units are not billable
+    # Summit checks the authorization before EVV units (dev: D07/D08 reported over D09, 4 of 4).
+    precedence: [D01, D07, D08, D10, D09, D05, D04, D06, D02, D03]
     timely_filing:
       - {dos_from: null, dos_to: null, days: 60, citation: "PY03 Handbook §9.3"}
     modifier_rules: []
@@ -67,9 +70,9 @@ payers:
       - id: amendment_3_whole_hours
         denial_code: D10
         units_multiple_of: 4                 # whole hours
-        effective_from: null                 # TBC
-        agencies: null                       # TBC: null = all agencies
-        enabled: false                       # TBC: off until its scope is checked on dev
+        effective_from: 2026-07-01           # dev: June claims all paid (50), none paid from July
+        agencies: null                       # null = all agencies (dev shows no agency pattern)
+        enabled: true
         citation: "PY03 Handbook §9.5 (contract amendment 3, inferred from history remarks)"
     citations:
       evv: "PY03 Handbook §9.1"

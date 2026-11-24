@@ -12,9 +12,9 @@ Time is short, so the build is staged so that each stage leaves something submit
 Why: of the 1,026 predictable history denials (1,099 minus 73 D99), 820 (80%) need only the claim, its EVV and its authorization; 171 (17%) need the timeline; 35 (3%) are D10.
 
 - [x] **Stage 1, core:** `rules_config.yaml`, `config.py`, `evv.py`, the six stateless rules (D07, D08, D03, D01, D04, D09) with boundary tests, placeholder precedence, `predict.py` writing both prediction files with fix + citation + action, `evaluate.py` on dev.
-- [ ] **Stage 2, state:** duplicates (D05), auth balance (D02), PY02 daily max (D06), in `actual` mode only.
-- [ ] **Stage 3, finish:** filing boundary and precedence checked on dev (order set by hand from dev counts, recorded in `findings.md`), test split scored once, README.
-- [ ] **Stage 4, only if time remains:** PY03 D10 scope, then a one-page Streamlit view.
+- [x] **Stage 2, state:** duplicates (D05), auth balance (D02), PY02 daily max (D06), in `actual` mode only.
+- [x] **Stage 3, finish:** filing boundary and precedence checked on dev (order set by hand from dev counts, recorded in `findings.md`), test split scored once, README.
+- [x] **Stage 4:** a one-page Streamlit view (`app/streamlit_app.py`). (The PY03 D10 scope was moved into stage 3 so that no rule changes after the test score.)
 
 **Dropped (next steps):** `simulated` mode, ablation table, time-split scoring, automated `learn_precedence`, tier-2 model, `--llm` path, the four-view Streamlit app (CLI output is the fallback `PLANNING.md` allows).
 

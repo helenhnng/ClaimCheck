@@ -45,14 +45,14 @@ Status of each: **open**, or **resolved** with the evidence.
 
 | # | Question | Status | Evidence (dev counts) | Decision |
 |---|---|---|---|---|
-| 1 | Filing boundary (`>` vs `>=`) | open | | |
+| 1 | Filing boundary (`>` vs `>=`) | resolved (stage 3) | Dev claims filed exactly on the limit day: 3 paid, 2 D02, 0 D03. One day over: 4 D03, 3 D09, 0 paid | Deny when days > limit |
 | 2 | Duplicate scope (denied earlier claims, freq 7) | resolved for freq 1 (stage 2); freq 7 untestable | Key = payer + patient + service + DOS, any earlier claim whatever its outcome: fires on 20 dev claims, 19 coded D05, 1 coded D10 (also a duplicate). 0 true D05 missed, 0 fired on paid claims | Keep as documented. Freq 7 never a duplicate (from `billing_basics.md` only: history has no freq 7) |
 | 3 | Partial auth exhaustion (whole claim denied; only paid claims draw down) | resolved (stage 2) | Paid-only drawdown: D02 fires on 60 dev claims, covers all 45 true D02, 1 fired on a paid claim. If denied claims also drew down: fires on 114, 36 of them paid claims | Whole claim denied when units > balance; only paid claims draw down |
 | 4 | PY02 daily max (order applied, paid claims only) | resolved (stage 2) | Submission order, paid units only, all services: fires on 74 dev claims, covers all 55 true D06, 0 fired on paid claims (the other 19 carry a higher-ranked code) | Keep as documented |
-| 5 | PY02 modifiers on non-T1019 services / pre-September U3 | open | | |
-| 6 | PY01 `U1` modifier | open | | |
-| 7 | PY03 contract amendment 3 scope (D10) | open | | |
-| 8 | Precedence when several rules fire | open | | |
+| 5 | PY02 modifiers on non-T1019 services / pre-September U3 | resolved (stage 3) | D04 as documented: 26 of 26 dev D04 found, 0 fired on paid claims. PY02 S5125/T1005 never carry a modifier. T1019 with U3: 13 paid, 12 D04, split exactly by the weekend-from-1-Sep rule | Keep as documented; no extra modifier rule |
+| 6 | PY01 `U1` modifier | resolved (stage 3) | PY01 T1019 with U1 and no other rule broken: 117 paid, 2 D99. Without a modifier: 122 paid, 7 D99. Same for PY03 | U1 is ignored outside PY02; no rule |
+| 7 | PY03 contract amendment 3 scope (D10) | resolved (stage 3) | PY03 dev claims with non-whole-hour units and no other rule broken: DOS in June 50 paid, 0 denied; DOS from July 0 paid, 15 D10, 6 D99 (all with the amendment-3 remark). No agency or service pattern | D10 when `units % 4 != 0`, PY03, DOS >= 2026-07-01, all agencies |
+| 8 | Precedence when several rules fire | resolved (stage 3), thin evidence for some pairs | See "Code order" below | Default D01, D09, D07, D08, D10, D05, D04, D06, D02, D03; PY03 puts D07, D08, D10 before D09 |
 | 9 | Data quirks (payer names, date formats) | resolved (M1) | 6 payer aliases, 2 date formats, whitespace/case in `service_code` and `modifier`; see "Data quirks" | Explicit alias map, two explicit date formats (US = month/day/year), strip + upper-case codes; unknown values raise |
 | 10 | Ordering on the to-check set | resolved (stage 2) | One timeline of history + to-check claims finds all 45 dev D02; history claims alone find 37 and miss 8. So the payer's balances already reflect to-check claims submitted earlier | Walk history and to-check together by `submitted_date`, then `claim_id`; history claims update the state with their real outcome, to-check claims with our prediction |
 
@@ -126,8 +126,46 @@ Rows are the set of rules we found broken; the columns show the code the payer r
 
 Reading: D01 wins every pairing (21 of 21). D09 beats D03, D02, D06 and D04. D07 and D08 beat D03 and D06. D06 beats D02, and D02 beats D03. **Unclear:** D09 against D07 or D08 splits 6 to 4. The order is set in stage 3.
 
+## Stage 3: rule decisions on dev
+
+| Change | Dev paid/denied accuracy | Dev exact-code accuracy |
+|---|---|---|
+| Stage 2 (placeholder code order, D10 off) | 97.6% | 95.2% |
+| + code order from dev, D10 on from 2026-07-01 | 98.4% | 98.1% (the ceiling) |
+
+- **Filing boundary:** `>` confirmed (question 1). No change.
+- **EVV aggregation:** sum-then-round and round-then-sum give identical dev results (D09 fires on 181 claims, 0 paid, 0 true D09 missed either way). Kept sum-then-round, which is what `billing_basics.md` describes.
+- **Modifiers:** no rule beyond PY02 T1019 (questions 5 and 6). No change.
+- **PY03 amendment 3:** switched on with an effective date of 2026-07-01 (question 7). On dev it finds all 25 D10. It also fires on 8 claims the payer coded D99; all 8 carry the amendment-3 remark, so the cause is right and the payer's label is inconsistent.
+
+### Code order
+Pairwise results from dev claims that break two or more rules ("A > B: n" means the payer reported A on n claims that also broke B). No pair goes both ways once D10 has its start date.
+
+- **PY01:** D01 > D03 8, D01 > D07 2, D01 > D08 2, D09 > D03 17, D09 > D07 3, D09 > D08 4, D09 > D02 2, D07 > D03 3, D08 > D03 4, D02 > D03 3.
+- **PY02:** D01 > D06 3, D01 > D07 2, D01 > D08 1, D01 > D04 1, D09 > D06 8, D09 > D02 2, D09 > D04 1, D09 > D07 1, D04 > D06 3, D05 > D06 3, D07 > D06 2, D06 > D02 2.
+- **PY03:** D01 > D10 3, D01 > D02 3, D01 > D03 2, D07 > D09 2, D08 > D09 2, D07 > D10 1, D10 > D09 8, D10 > D02 1, D10 > D05 1, D09 > D03 3, D09 > D02 3, D02 > D03 2, D07 > D03 1, D08 > D03 1.
+
+Order chosen: **D01, D09, D07, D08, D10, D05, D04, D06, D02, D03**, with **PY03: D01, D07, D08, D10, D09, D05, D04, D06, D02, D03**.
+
+- **PY03 differs:** it reports the authorization codes ahead of D09 (4 of 4), where PY01 and PY02 report D09 first (8 of 8).
+- **Thin spots:** D05 is placed from two pairs only (D05 > D06, D10 > D05). D05 against D03 and D09 was never seen on dev. D01 against D07/D08 on PY03 was never seen (assumed the same as the other payers).
+
+## Final test score (scored once, 2026-11-24)
+
+| Measure | Dev (2,681) | Test (1,149) |
+|---|---|---|
+| Paid/denied accuracy | 98.4% | 98.4% |
+| Denied precision / recall | 99.9% / 94.4% | 100.0% / 94.5% |
+| False alarms | 1 | 0 |
+| Missed denials | 43 (all D99) | 18 (all D99) |
+| Exact-code accuracy | 98.1% | 98.0% |
+| Ceiling (share that is not D99) | 98.1% | 98.1% |
+
+Test errors: 18 D99 predicted paid, 4 D99 predicted D10, 1 D03 predicted D05. Dev and test agree, so the rules were not fitted to quirks of the dev claims.
+
 ## Rule decisions (M5)
-_One entry per change: alternatives tried, dev metrics before/after, what was kept._
+_Superseded by "Stage 3: rule decisions on dev" above._
 
 ## Post-test changes
-_Anything changed after the test split was scored (M7). Should stay empty._
+- **Review routing only (no status or code changed):** a paid PY02 claim near the 32-unit daily maximum was sent to review even when no earlier claim existed for that day, which is noise (24 of the 546 claims to check). Now it is flagged only when earlier paid units exist. Review rate on test went from 4.4% to 1.7%; every other test number is identical.
+- **Seen on test, deliberately not acted on:** one test claim that broke both D03 and D05 was coded D03, where our order says D05. One claim is not enough to reorder, and changing a rule because of test would break the score-once discipline. Seven claims to check break D05 together with D03 or D09; all are predicted denied either way, only the code could differ.

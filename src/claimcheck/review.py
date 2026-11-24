@@ -26,7 +26,9 @@ def review_reasons(claim: dict, ctx: ClaimContext, chosen: RuleHit | None, cfg: 
         left = ctx.auth_remaining_before - claim["units"]
         if 0 <= left <= margin:
             reasons.append(f"Only {left} unit(s) would remain on the authorization; depends on earlier claims being paid")
-    if ctx.daily_paid_before is not None and chosen is None:
+    # Only when earlier paid claims exist for the day: a single claim near the limit
+    # depends on nothing we predicted.
+    if ctx.daily_paid_before and chosen is None:
         limit = (cfg["payers"][claim["payer_id"]].get("daily_max_units") or {}).get("limit")
         if limit is not None and 0 <= limit - ctx.daily_paid_before - claim["units"] <= margin:
             reasons.append("Close to the daily unit maximum; depends on earlier claims being paid")
