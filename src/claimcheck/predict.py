@@ -18,11 +18,13 @@ from claimcheck.config import default_config
 from claimcheck.data import load_auths, load_claims, load_evv
 from claimcheck.evv import NO_EVV, EvvDay, build_evv_index
 from claimcheck.rules import ALLOWED_CLAIM_FIELDS, ClaimContext, evaluate_rules, pick_hit
+from claimcheck.timeline import TimelineState
 
 PREDICTION_COLUMNS = ["claim_id", "status", "denial_code"]
 DETAIL_COLUMNS = PREDICTION_COLUMNS + [
     "payer_id", "all_hits", "rule_id", "message", "citation", "fix",
     "confidence", "needs_review", "review_reason", "action",
+    "auth_remaining_before", "daily_paid_before", "dup_of_claim_id",
 ]
 
 
@@ -56,17 +58,22 @@ def claim_records(claims: pd.DataFrame) -> list[dict]:
     return ordered[columns].to_dict("records")
 
 
-def context_for(claim: dict, lookups: Lookups) -> ClaimContext:
+def context_for(claim: dict, lookups: Lookups, state: TimelineState | None = None) -> ClaimContext:
     dos = claim["date_of_service"]
     candidates = [
         a for a in lookups.auths_by_key.get((claim["payer_id"], claim["patient_id"], claim["service_code"]), [])
         if a["start_date"] <= dos <= a["end_date"]
     ]
-    return ClaimContext(
+    ctx = ClaimContext(
         evv=lookups.evv.get((claim["patient_id"], claim["service_code"], dos), NO_EVV),
         auth=lookups.auth_by_id.get(claim["auth_id"]) if claim["auth_id"] else None,
         candidate_auths=candidates,
     )
+    if state is not None:
+        ctx.dup_of_claim_id = state.earlier_claim_with_same_key(claim)
+        ctx.auth_remaining_before = state.auth_remaining(ctx.auth)
+        ctx.daily_paid_before = state.daily_paid_units(claim)
+    return ctx
 
 
 def decide(claim: dict, ctx: ClaimContext, cfg: dict) -> dict:
@@ -88,16 +95,40 @@ def decide(claim: dict, ctx: ClaimContext, cfg: dict) -> dict:
         "needs_review": bool(reasons),
         "review_reason": "; ".join(reasons),
         "action": review.action(chosen, reasons),
+        "auth_remaining_before": ctx.auth_remaining_before,
+        "daily_paid_before": ctx.daily_paid_before,
+        "dup_of_claim_id": ctx.dup_of_claim_id or "",
     }
 
 
 def predict_claims(claims: pd.DataFrame, evv: pd.DataFrame, auths: pd.DataFrame,
-                   cfg: dict | None = None) -> pd.DataFrame:
-    """Detailed predictions for every claim, in submission order."""
+                   cfg: dict | None = None, known_status: dict[str, str] | None = None) -> pd.DataFrame:
+    """Detailed predictions for every claim, walking them in submission order.
+
+    ``claims`` should be the whole timeline (history and claims to check
+    together), because duplicates, authorization balances and daily totals
+    depend on earlier claims. After each claim the running state is updated:
+    with the payer's real decision where one is known (``known_status``, i.e.
+    history claims), otherwise with our own prediction.
+    """
     cfg = cfg or default_config()
+    known_status = known_status or {}
     lookups = build_lookups(evv, auths, cfg)
-    rows = [decide(claim, context_for(claim, lookups), cfg) for claim in claim_records(claims)]
+    state = TimelineState(duplicate_key=cfg["global"]["duplicate_key"])
+    rows = []
+    for claim in claim_records(claims):
+        row = decide(claim, context_for(claim, lookups, state), cfg)
+        rows.append(row)
+        state.record(claim, paid=known_status.get(claim["claim_id"], row["status"]) == "paid")
     return pd.DataFrame(rows, columns=DETAIL_COLUMNS)
+
+
+def load_timeline() -> tuple[pd.DataFrame, dict[str, str]]:
+    """All claims (history + to check) and the known outcome of the history claims."""
+    history, to_check = load_claims("history"), load_claims("to_check")
+    known = dict(zip(history["claim_id"], history["status"]))
+    shared = [c for c in to_check.columns if c in history.columns]
+    return pd.concat([history[shared], to_check[shared]], ignore_index=True), known
 
 
 def validate_predictions(pred: pd.DataFrame, expected_ids: set[str]) -> None:
@@ -115,7 +146,9 @@ def validate_predictions(pred: pd.DataFrame, expected_ids: set[str]) -> None:
 def main() -> None:
     argparse.ArgumentParser(description=__doc__).parse_args()
     to_check = load_claims("to_check")
-    detailed = predict_claims(to_check, load_evv(), load_auths())
+    timeline, known = load_timeline()
+    everything = predict_claims(timeline, load_evv(), load_auths(), known_status=known)
+    detailed = everything[everything["claim_id"].isin(set(to_check["claim_id"]))]
     detailed = detailed.sort_values("claim_id").reset_index(drop=True)
     predictions = detailed[PREDICTION_COLUMNS]
     validate_predictions(predictions, set(to_check["claim_id"]))

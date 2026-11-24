@@ -33,3 +33,10 @@ Short notes on non-obvious choices, mistakes and user corrections. Feeds the pre
 - **Leak guard.** Claims are reduced to an allow-list of fields before any rule sees them, and a test uses a spy dict to prove no rule reads `remark`, `status` or `denial_code`.
 - **Bug caught on first run:** a dataclass default shared one mutable `EvvDay` object; Python 3.14 rejects this. Switched to `default_factory`.
 - **Dropped `explain.py`.** Each rule builds its own message and fix, since the LLM wording path is out of scope now.
+
+## Stage 2: rules that depend on earlier claims (2026-11-24)
+- **User corrected the communication style twice.** First: no technical terms at all. Then: that went too far; codes, statuses and error types are fine, only unexplained software jargon ("in config") is the problem. Lesson: ask what the reader already knows instead of assuming "non-technical" means everything.
+- **Tested the assumptions instead of trusting them.** Three variants on dev: (A) one timeline of history + to-check claims, (B) history only, (C) denied claims also use up authorization units. A finds all 45 D02; B misses 8; C raises 36 false alarms. So the documented reading (A) is right, and the to-check claims really are interleaved with the history.
+- **Authorization balance is not checked when the authorization does not fit the claim** (wrong patient, service or dates). The balance of the wrong authorization says nothing, and it would add noise to the precedence evidence.
+- **Left one false alarm alone** (a paid claim we call D02). One case is not enough to change a rule.
+- **Precedence evidence is now complete but the order is not changed yet**, to keep stage 2 a clean before/after of adding the three rules.

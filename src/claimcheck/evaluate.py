@@ -13,7 +13,7 @@ import pandas as pd
 
 from claimcheck import paths
 from claimcheck.data import load_auths, load_claims, load_evv
-from claimcheck.predict import predict_claims
+from claimcheck.predict import load_timeline, predict_claims
 from claimcheck.split import attach_split
 
 UNPREDICTABLE = "D99"
@@ -22,10 +22,11 @@ UNPREDICTABLE = "D99"
 def scored_frame(split: str, cfg: dict | None = None) -> pd.DataFrame:
     """True and predicted outcome for each history claim on one side of the split."""
     history = attach_split(load_claims("history"))
-    predicted = predict_claims(history, load_evv(), load_auths(), cfg)
+    timeline, known = load_timeline()
+    predicted = predict_claims(timeline, load_evv(), load_auths(), cfg, known_status=known)
     df = history[["claim_id", "payer_id", "status", "denial_code", "split"]].merge(
         predicted[["claim_id", "status", "denial_code", "all_hits", "needs_review", "action"]],
-        on="claim_id", suffixes=("_true", "_pred"), validate="one_to_one",
+        on="claim_id", how="left", suffixes=("_true", "_pred"), validate="one_to_one",
     )
     df["code_true"] = df["denial_code_true"].fillna("PAID")
     df["code_pred"] = df["denial_code_pred"].replace("", "PAID")

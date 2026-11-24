@@ -46,15 +46,15 @@ Status of each: **open**, or **resolved** with the evidence.
 | # | Question | Status | Evidence (dev counts) | Decision |
 |---|---|---|---|---|
 | 1 | Filing boundary (`>` vs `>=`) | open | | |
-| 2 | Duplicate scope (denied earlier claims, freq 7) | open | | |
-| 3 | Partial auth exhaustion (whole claim denied; only paid claims draw down) | open | | |
-| 4 | PY02 daily max (order applied, paid claims only) | open | | |
+| 2 | Duplicate scope (denied earlier claims, freq 7) | resolved for freq 1 (stage 2); freq 7 untestable | Key = payer + patient + service + DOS, any earlier claim whatever its outcome: fires on 20 dev claims, 19 coded D05, 1 coded D10 (also a duplicate). 0 true D05 missed, 0 fired on paid claims | Keep as documented. Freq 7 never a duplicate (from `billing_basics.md` only: history has no freq 7) |
+| 3 | Partial auth exhaustion (whole claim denied; only paid claims draw down) | resolved (stage 2) | Paid-only drawdown: D02 fires on 60 dev claims, covers all 45 true D02, 1 fired on a paid claim. If denied claims also drew down: fires on 114, 36 of them paid claims | Whole claim denied when units > balance; only paid claims draw down |
+| 4 | PY02 daily max (order applied, paid claims only) | resolved (stage 2) | Submission order, paid units only, all services: fires on 74 dev claims, covers all 55 true D06, 0 fired on paid claims (the other 19 carry a higher-ranked code) | Keep as documented |
 | 5 | PY02 modifiers on non-T1019 services / pre-September U3 | open | | |
 | 6 | PY01 `U1` modifier | open | | |
 | 7 | PY03 contract amendment 3 scope (D10) | open | | |
 | 8 | Precedence when several rules fire | open | | |
 | 9 | Data quirks (payer names, date formats) | resolved (M1) | 6 payer aliases, 2 date formats, whitespace/case in `service_code` and `modifier`; see "Data quirks" | Explicit alias map, two explicit date formats (US = month/day/year), strip + upper-case codes; unknown values raise |
-| 10 | Ordering on the to-check set | open | | |
+| 10 | Ordering on the to-check set | resolved (stage 2) | One timeline of history + to-check claims finds all 45 dev D02; history claims alone find 37 and miss 8. So the payer's balances already reflect to-check claims submitted earlier | Walk history and to-check together by `submitted_date`, then `claim_id`; history claims update the state with their real outcome, to-check claims with our prediction |
 
 ## Stage 1 baseline: six stateless rules, placeholder precedence (dev, 2,681 claims)
 Rules D07, D08, D03, D01, D04, D09 exactly as documented, nothing tuned. Full report: `outputs/metrics_dev.md`.
@@ -85,6 +85,46 @@ Rules D07, D08, D03, D01, D04, D09 exactly as documented, nothing tuned. Full re
 | D09 | D04 | 1 |
 
   So D01 and D09 outrank D03, D07, D08 and D04, and D10 and D02 outrank at least D09 and D03. The order is fixed in stage 3, once D02, D05 and D06 exist.
+
+## Stage 2: rules that depend on earlier claims (dev, 2,681 claims)
+Added D05, D02 and D06 on a running timeline. Placeholder precedence still in place.
+
+| Measure | Stage 1 | Stage 2 |
+|---|---|---|
+| Paid/denied accuracy | 93.3% | 97.6% |
+| Denied precision / recall | 100.0% / 76.6% | 99.9% / 91.7% |
+| False alarms | 0 | 1 |
+| Missed denials | 180 | 64 (49 D99, 15 D10) |
+| Exact-code accuracy | 91.1% | 95.2% (ceiling 98.1%) |
+| Routed to review | 0.0% | 4.2% |
+
+- **The one false alarm** (C012372, PY01): we compute 6 units left on AUTH11084 and the claim bills 8, yet it was paid. Not chased: a single case, and tuning to it would be fitting noise.
+- **Every remaining missed denial is D99 (49) or D10 (15).** D99 is unpredictable; D10 is the PY03 amendment-3 rule, still switched off.
+
+### Which code the payer reports when several rules are broken (dev claims with 2+ rules broken)
+Rows are the set of rules we found broken; the columns show the code the payer reported.
+
+| Rules broken | Payer reported | Dev claims |
+|---|---|---|
+| D03 + D09 | D09 | 17 |
+| D03 + D01 | D01 | 9 |
+| D09 + D06 | D09 | 7 |
+| D09 + D02 | D09 (1 was D99) | 6 |
+| D03 + D02 | D02 | 5 |
+| D08 + D03 | D08 | 5 |
+| D07 + D03 | D07 | 4 |
+| D07 + D01 | D01 | 4 |
+| D04 + D06 | D04 | 3 |
+| D05 + D06 | D05 | 3 |
+| D08 + D01 (one also D06) | D01 | 3 |
+| D01 + D02, D01 + D06, D01 + D04 | D01 | 5 |
+| D02 + D06 | D06 | 2 |
+| D07 + D06 | D07 | 2 |
+| D07 + D09 | D09 3, D07 2 | 5 |
+| D08 + D09 | D09 3, D08 2 | 5 |
+| three rules incl. D09 (with D03, D07/D08/D04, D02/D06) | D09 | 4 |
+
+Reading: D01 wins every pairing (21 of 21). D09 beats D03, D02, D06 and D04. D07 and D08 beat D03 and D06. D06 beats D02, and D02 beats D03. **Unclear:** D09 against D07 or D08 splits 6 to 4. The order is set in stage 3.
 
 ## Rule decisions (M5)
 _One entry per change: alternatives tried, dev metrics before/after, what was kept._

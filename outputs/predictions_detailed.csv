@@ -1,547 +1,547 @@
-claim_id,status,denial_code,payer_id,all_hits,rule_id,message,citation,fix,confidence,needs_review,review_reason,action
-C018952,denied,D03,PY01,D03,timely_filing,Submitted 68 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 23 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C018960,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C018965,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C018966,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C018970,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C018972,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C018978,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C018986,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C018987,denied,D03,PY01,D03,timely_filing,Submitted 70 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 25 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C018989,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C018998,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019003,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019006,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019010,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019019,denied,D07,PY01,D07,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH11781 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019023,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019032,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019037,denied,D09,PY03,D09,evv_units,"Billed 20 units, but 293 verified minutes support only 19 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 19 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019044,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019045,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019046,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019053,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019056,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019060,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019068,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019076,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019085,denied,D03,PY01,D03,timely_filing,Submitted 99 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 54 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019088,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019089,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019096,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019100,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019105,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019112,denied,D01,PY02,D01,evv_missing,The EVV visit for this date (V003730) was rejected.,"PY02 Billing Guide, Visit verification","Correct and re-verify visit V003730, or do not bill this date.",high,False,,fix_then_submit
-C019118,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019120,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019127,denied,D09,PY02,D09,evv_units,"Billed 10 units, but 128 verified minutes support only 8 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019136,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019145,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019147,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019151,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019155,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019163,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019168,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019169,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019178,denied,D03,PY01,D03,timely_filing,Submitted 108 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 63 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019181,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019185,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019193,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019199,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019207,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019213,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019220,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019223,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019227,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019230,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019231,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019232,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019233,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019240,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019248,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019250,denied,D03,PY01,D03|D09,timely_filing,Submitted 78 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 33 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",medium,False,,fix_then_submit
-C019259,denied,D03,PY01,D03,timely_filing,Submitted 88 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 43 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019263,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019272,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019276,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019280,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019288,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019294,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019300,denied,D03,PY01,D03,timely_filing,Submitted 69 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 24 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019308,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019317,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019323,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019327,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019329,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019336,denied,D03,PY01,D03,timely_filing,Submitted 108 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 63 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019340,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019347,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019355,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019361,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019362,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019367,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019371,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019378,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019379,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019382,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019383,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019388,denied,D09,PY03,D09,evv_units,"Billed 14 units, but 186 verified minutes support only 12 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 12 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019391,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019392,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019394,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019402,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019409,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019412,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019419,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019420,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019422,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019430,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019435,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019438,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019439,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019445,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019447,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019450,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019458,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019459,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019463,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019464,denied,D01,PY01,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY01 Manual §4.2,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019466,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019470,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019471,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019478,denied,D07,PY01,D07|D03,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH12965 is on file for this patient, service and date.",medium,False,,fix_then_submit
-C019487,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019494,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019495,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019498,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019504,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019505,denied,D03,PY01,D03,timely_filing,Submitted 55 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 10 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019506,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019514,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019518,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019521,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019529,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019534,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019541,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019545,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019547,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019553,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019556,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019559,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019561,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019566,denied,D01,PY03,D01,evv_missing,The EVV visit for this date (V003821) was rejected.,PY03 Handbook §9.1,"Correct and re-verify visit V003821, or do not bill this date.",high,False,,fix_then_submit
-C019573,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019577,denied,D09,PY02,D09,evv_units,"Billed 11 units, but 150 verified minutes support only 10 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 10 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019581,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019588,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019591,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019597,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019599,denied,D01,PY03,D01,evv_missing,The EVV visit for this date (V003828) was rejected.,PY03 Handbook §9.1,"Correct and re-verify visit V003828, or do not bill this date.",high,False,,fix_then_submit
-C019600,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019609,denied,D03,PY03,D03,timely_filing,Submitted 70 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 10 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019615,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019624,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019625,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019627,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH13917 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 30 Sep 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH13920 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019632,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019635,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019644,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019650,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019654,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019662,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019667,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019674,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019675,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019684,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019690,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH10176 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 7 Oct 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH10181 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019698,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019699,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019706,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019712,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019714,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019715,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019716,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019724,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019733,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019734,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019741,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019750,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019757,denied,D09,PY03,D09,evv_units,"Billed 34 units, but 483 verified minutes support only 32 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 32 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019762,denied,D03,PY01,D03,timely_filing,Submitted 106 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 61 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019771,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019777,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019781,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019787,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019788,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019794,denied,D03,PY01,D03,timely_filing,Submitted 78 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 33 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019795,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019804,denied,D09,PY02,D09,evv_units,"Billed 8 units, but 112 verified minutes support only 7 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019810,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019817,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019819,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019826,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019834,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019841,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019847,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019851,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019859,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019861,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019869,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019872,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019877,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019878,denied,D07,PY03,D07,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH13133 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019880,denied,D01,PY01,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY01 Manual §4.2,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019882,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019885,denied,D03,PY01,D03,timely_filing,Submitted 87 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 42 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C019890,denied,D09,PY03,D09,evv_units,"Billed 14 units, but 191 verified minutes support only 12 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 12 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019893,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019897,denied,D07,PY01,D07,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH12276 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019900,denied,D09,PY01,D09,evv_units,"Billed 10 units, but 138 verified minutes support only 9 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 9 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019909,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019911,denied,D01,PY03,D01,evv_missing,The EVV visit for this date (V003887) was rejected.,PY03 Handbook §9.1,"Correct and re-verify visit V003887, or do not bill this date.",high,False,,fix_then_submit
-C019913,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019916,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019918,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019920,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019929,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019932,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C019933,denied,D07,PY03,D07,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH11348 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019935,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019937,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019939,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019941,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019944,denied,D09,PY02,D09,evv_units,"Billed 29 units, but 425 verified minutes support only 28 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 28 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C019953,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019958,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019960,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019961,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019968,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019975,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C019982,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C019985,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH11592 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 8 Nov 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH11597 is on file for this patient, service and date.",high,False,,fix_then_submit
-C019992,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C019994,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020002,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020007,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020008,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020015,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020020,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020029,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020036,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020045,denied,D03,PY01,D03,timely_filing,Submitted 83 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 38 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020051,denied,D03,PY03,D03,timely_filing,Submitted 65 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 5 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020052,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020059,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020061,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020064,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020071,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020080,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020087,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020096,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH10329 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 10 Nov 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH10331 is on file for this patient, service and date.",high,False,,fix_then_submit
-C020100,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020104,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020108,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020113,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020116,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020118,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020123,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020130,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020133,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020137,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020139,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020141,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C020145,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020152,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020157,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020166,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020172,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020175,denied,D07,PY01,D07,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH11002 is on file for this patient, service and date.",high,False,,fix_then_submit
-C020178,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020185,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020194,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020203,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020210,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020215,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020219,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020222,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020226,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020229,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020233,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020240,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020244,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020251,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020258,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020264,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020273,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020281,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020288,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020294,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020302,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020307,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020312,denied,D09,PY03,D09,evv_units,"Billed 8 units, but 113 verified minutes support only 7 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020321,denied,D09,PY01,D09,evv_units,"Billed 38 units, but 538 verified minutes support only 36 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 36 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020322,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020324,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020331,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020333,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020342,denied,D01,PY01,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY01 Manual §4.2,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C020349,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C020352,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020358,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020364,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020365,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020368,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020371,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020379,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020388,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020395,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020398,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020406,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020410,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020417,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020420,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020424,denied,D03,PY01,D03,timely_filing,Submitted 106 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 61 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020429,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020433,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020434,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020439,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020441,denied,D09,PY01,D09,evv_units,"Billed 8 units, but 112 verified minutes support only 7 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020450,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020456,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020457,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020465,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020470,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020474,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020483,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020490,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020497,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020505,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020511,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020515,denied,D07,PY03,D07,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH10597 is on file for this patient, service and date.",high,False,,fix_then_submit
-C020516,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C020523,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020531,denied,D09,PY03,D09,evv_units,"Billed 26 units, but 366 verified minutes support only 24 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 24 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020532,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020537,denied,D07,PY03,D07|D09,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH12126 is on file for this patient, service and date.",medium,False,,fix_then_submit
-C020546,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020555,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020556,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020563,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020569,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020570,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020577,denied,D03,PY01,D03,timely_filing,Submitted 61 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 16 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020586,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020593,denied,D09,PY02,D09,evv_units,"Billed 9 units, but 128 verified minutes support only 8 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020596,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020605,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020611,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020616,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020623,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020626,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020633,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020637,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020639,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020648,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020651,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020658,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020667,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020674,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020683,denied,D09,PY01,D09,evv_units,"Billed 9 units, but 127 verified minutes support only 8 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020684,denied,D03,PY03,D03,timely_filing,Submitted 109 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 49 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020691,denied,D04,PY02,D04,modifier,T1019 on Wednesday 14 Oct 2026 needs modifier U2; the claim has U1.,"PY02 Billing Guide, Modifiers + Provider Notice 2026-08",Change the modifier to U2.,high,False,,fix_then_submit
-C020700,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020706,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020708,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020709,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020714,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020718,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020724,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020730,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020734,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020735,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020741,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020743,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020745,denied,D03,PY01,D03,timely_filing,Submitted 93 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 48 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020748,denied,D01,PY01,D01,evv_missing,The only EVV visit for this date (V004046) is awaiting verification after a manual edit.,PY01 Manual §4.2,Hold: do not submit yet. Submit once V004046 is verified.,high,False,,hold
-C020752,denied,D01,PY01,D01,evv_missing,The only EVV visit for this date (V004047) is awaiting verification after a manual edit.,PY01 Manual §4.2,Hold: do not submit yet. Submit once V004047 is verified.,high,False,,hold
-C020756,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020765,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020774,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020782,denied,D08,PY01,D08,auth_invalid,"Authorization AUTH12626 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 30 Oct 2026.",PY01 Manual §4.5,"Replace the authorization number. AUTH12629 is on file for this patient, service and date.",high,False,,fix_then_submit
-C020790,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020791,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020792,denied,D03,PY01,D03,timely_filing,Submitted 49 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 4 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020798,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020807,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020816,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020822,denied,D03,PY03,D03,timely_filing,Submitted 110 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 50 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020830,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020831,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020836,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C020840,denied,D09,PY02,D09,evv_units,"Billed 8 units, but 110 verified minutes support only 7 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020847,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020848,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020852,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020858,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020859,denied,D04,PY02,D04,modifier,T1019 on Tuesday 13 Oct 2026 needs modifier U2; the claim has U1.,"PY02 Billing Guide, Modifiers + Provider Notice 2026-08",Change the modifier to U2.,high,False,,fix_then_submit
-C020865,denied,D03,PY01,D03,timely_filing,Submitted 106 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 61 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020867,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020874,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020879,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020880,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020888,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020890,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020898,denied,D09,PY02,D09,evv_units,"Billed 8 units, but 108 verified minutes support only 7 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020903,denied,D09,PY02,D09,evv_units,"Billed 19 units, but 275 verified minutes support only 18 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 18 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020904,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020905,denied,D09,PY02,D09,evv_units,"Billed 32 units, but 422 verified minutes support only 28 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 28 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020906,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020914,denied,D03,PY01,D03,timely_filing,Submitted 57 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 12 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020922,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020930,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020931,denied,D01,PY02,D01,evv_missing,The EVV visit for this date (V004082) was rejected.,"PY02 Billing Guide, Visit verification","Correct and re-verify visit V004082, or do not bill this date.",high,False,,fix_then_submit
-C020932,denied,D09,PY01,D09,evv_units,"Billed 26 units, but 364 verified minutes support only 24 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 24 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020934,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020938,denied,D09,PY02,D09,evv_units,"Billed 13 units, but 141 verified minutes support only 9 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 9 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C020947,denied,D03,PY01,D03|D09,timely_filing,Submitted 76 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 31 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",medium,False,,fix_then_submit
-C020955,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020959,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020964,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020965,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020970,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C020975,denied,D03,PY01,D03,timely_filing,Submitted 82 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 37 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C020980,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C020987,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020990,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C020995,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021003,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021008,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021014,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021015,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021017,denied,D01,PY03,D01,evv_missing,The only EVV visit for this date (V004101) is awaiting verification after a manual edit.,PY03 Handbook §9.1,Hold: do not submit yet. Submit once V004101 is verified.,high,False,,hold
-C021021,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021025,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021033,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021039,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021044,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021053,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021057,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021061,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021067,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021069,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021070,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021075,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021078,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021087,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021093,denied,D09,PY03,D09,evv_units,"Billed 12 units, but 120 verified minutes support only 8 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C021101,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021106,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021108,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021112,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021119,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021127,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021133,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021140,denied,D09,PY02,D09,evv_units,"Billed 24 units, but 353 verified minutes support only 23 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 23 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C021147,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021149,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C021158,denied,D03,PY01,D03,timely_filing,Submitted 57 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 12 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021161,denied,D09,PY01,D09,evv_units,"Billed 17 units, but 234 verified minutes support only 16 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 16 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C021162,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021163,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021169,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021173,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021177,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021181,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021182,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021190,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021195,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021199,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021207,denied,D03,PY01,D03,timely_filing,Submitted 65 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 20 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021216,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021221,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021224,denied,D07,PY02,D07,auth_missing,The claim has no prior authorization number.,"PY02 Billing Guide, Authorizations","Add the authorization number before submitting. AUTH13714 is on file for this patient, service and date.",high,False,,fix_then_submit
-C021231,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021236,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021242,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C021243,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021249,denied,D01,PY02,D01,evv_missing,The only EVV visit for this date (V004145) is awaiting verification after a manual edit.,"PY02 Billing Guide, Visit verification",Hold: do not submit yet. Submit once V004145 is verified.,high,False,,hold
-C021256,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021262,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021269,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021275,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021276,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021285,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit
-C021287,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021292,denied,D03,PY01,D03,timely_filing,Submitted 68 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 23 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021301,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021302,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021308,denied,D09,PY03,D09,evv_units,"Billed 17 units, but 246 verified minutes support only 16 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 16 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C021310,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021316,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021325,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021326,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021331,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021333,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021334,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021336,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021344,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021346,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021351,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021357,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021362,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021366,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021368,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021374,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021383,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021390,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021393,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021401,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021407,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021582,denied,D03,PY01,D03,timely_filing,Submitted 59 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 14 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021585,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021592,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021600,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021609,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021615,denied,D03,PY01,D03,timely_filing,Submitted 74 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 29 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021620,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021628,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021632,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021640,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021642,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021649,denied,D03,PY01,D03,timely_filing,Submitted 47 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 2 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021652,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021661,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021670,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021672,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021675,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021680,denied,D03,PY03,D03,timely_filing,Submitted 129 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 69 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021682,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021691,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021700,denied,D09,PY01,D09,evv_units,"Billed 30 units, but 442 verified minutes support only 29 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 29 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C021703,denied,D09,PY02,D09,evv_units,"Billed 36 units, but 532 verified minutes support only 35 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 35 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit
-C021707,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021709,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021718,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021724,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021727,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021731,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021733,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021742,denied,D03,PY03,D03,timely_filing,Submitted 106 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 46 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit
-C021747,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021748,paid,,PY01,,,No rule broken.,,,high,False,,submit
-C021753,paid,,PY03,,,No rule broken.,,,high,False,,submit
-C021755,paid,,PY02,,,No rule broken.,,,high,False,,submit
-C021761,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021766,denied,D09,PY03,D09,evv_units,"Billed 21 units, but 309 verified minutes support only 20 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 20 units, or correct the EVV record if the visit was longer.",medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021769,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021770,paid,,PY01,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021774,paid,,PY01,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021776,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021779,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021784,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021790,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021797,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021800,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021801,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021802,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
-C021803,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review
+claim_id,status,denial_code,payer_id,all_hits,rule_id,message,citation,fix,confidence,needs_review,review_reason,action,auth_remaining_before,daily_paid_before,dup_of_claim_id
+C018952,denied,D03,PY01,D03,timely_filing,Submitted 68 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 23 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,92.0,0,
+C018960,paid,,PY01,,,No rule broken.,,,high,False,,submit,44.0,0,
+C018965,paid,,PY01,,,No rule broken.,,,high,False,,submit,38.0,0,
+C018966,paid,,PY03,,,No rule broken.,,,high,False,,submit,84.0,0,
+C018970,paid,,PY03,,,No rule broken.,,,high,False,,submit,120.0,0,
+C018972,paid,,PY02,,,No rule broken.,,,high,False,,submit,92.0,0,
+C018978,paid,,PY01,,,No rule broken.,,,high,False,,submit,76.0,0,
+C018986,denied,D05,PY01,D05,duplicate,"Claim C021748 was already submitted for this payer, patient, service and date of service (12 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021748, send it as a corrected claim (frequency code 7) with C021748 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,145.0,14,C021748
+C018987,denied,D03,PY01,D03,timely_filing,Submitted 70 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 25 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,16.0,0,
+C018989,paid,,PY03,,,No rule broken.,,,high,False,,submit,116.0,0,
+C018998,paid,,PY03,,,No rule broken.,,,high,False,,submit,140.0,0,
+C019003,paid,,PY01,,,No rule broken.,,,high,False,,submit,121.0,0,
+C019006,paid,,PY03,,,No rule broken.,,,high,False,,submit,28.0,0,
+C019010,paid,,PY02,,,No rule broken.,,,high,False,,submit,32.0,0,
+C019019,denied,D07,PY01,D07,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH11781 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C019023,paid,,PY01,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019032,paid,,PY02,,,No rule broken.,,,high,False,,submit,66.0,0,
+C019037,denied,D09,PY03,D09,evv_units,"Billed 20 units, but 293 verified minutes support only 19 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 19 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,196.0,0,
+C019044,paid,,PY03,,,No rule broken.,,,high,False,,submit,216.0,0,
+C019045,paid,,PY01,,,No rule broken.,,,high,False,,submit,152.0,0,
+C019046,paid,,PY01,,,No rule broken.,,,high,False,,submit,118.0,0,
+C019053,paid,,PY01,,,No rule broken.,,,medium,True,Only 2 unit(s) would remain on the authorization; depends on earlier claims being paid,review,18.0,0,
+C019056,paid,,PY03,,,No rule broken.,,,high,False,,submit,108.0,0,
+C019060,denied,D05,PY01,D05,duplicate,"Claim C021733 was already submitted for this payer, patient, service and date of service (22 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021733, send it as a corrected claim (frequency code 7) with C021733 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,62.0,8,C021733
+C019068,paid,,PY01,,,No rule broken.,,,high,False,,submit,116.0,0,
+C019076,paid,,PY03,,,No rule broken.,,,high,False,,submit,60.0,0,
+C019085,denied,D03,PY01,D03,timely_filing,Submitted 99 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 54 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,84.0,0,
+C019088,denied,D05,PY03,D05,duplicate,"Claim C021753 was already submitted for this payer, patient, service and date of service (11 Oct 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021753, send it as a corrected claim (frequency code 7) with C021753 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,36.0,12,C021753
+C019089,paid,,PY01,,,No rule broken.,,,high,False,,submit,156.0,0,
+C019096,paid,,PY02,,,No rule broken.,,,high,False,,submit,286.0,0,
+C019100,paid,,PY01,,,No rule broken.,,,high,False,,submit,52.0,0,
+C019105,paid,,PY01,,,No rule broken.,,,high,False,,submit,70.0,0,
+C019112,denied,D01,PY02,D01,evv_missing,The EVV visit for this date (V003730) was rejected.,"PY02 Billing Guide, Visit verification","Correct and re-verify visit V003730, or do not bill this date.",high,False,,fix_then_submit,120.0,0,
+C019118,paid,,PY03,,,No rule broken.,,,high,False,,submit,196.0,0,
+C019120,paid,,PY01,,,No rule broken.,,,high,False,,submit,33.0,0,
+C019127,denied,D09,PY02,D09,evv_units,"Billed 10 units, but 128 verified minutes support only 8 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,174.0,0,
+C019136,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,158.0,0,
+C019145,paid,,PY03,,,No rule broken.,,,high,False,,submit,72.0,0,
+C019147,paid,,PY01,,,No rule broken.,,,high,False,,submit,143.0,0,
+C019151,paid,,PY03,,,No rule broken.,,,high,False,,submit,20.0,0,
+C019155,denied,D05,PY03,D05,duplicate,"Claim C021747 was already submitted for this payer, patient, service and date of service (14 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021747, send it as a corrected claim (frequency code 7) with C021747 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,108.0,32,C021747
+C019163,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,118.0,0,
+C019168,paid,,PY01,,,No rule broken.,,,high,False,,submit,93.0,0,
+C019169,paid,,PY01,,,No rule broken.,,,high,False,,submit,83.0,0,
+C019178,denied,D03,PY01,D03,timely_filing,Submitted 108 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 63 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,127.0,0,
+C019181,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,362.0,0,
+C019185,paid,,PY02,,,No rule broken.,,,high,False,,submit,61.0,0,
+C019193,paid,,PY01,,,No rule broken.,,,high,False,,submit,182.0,0,
+C019199,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 10 Nov 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,146.0,0,
+C019207,paid,,PY03,,,No rule broken.,,,high,False,,submit,157.0,0,
+C019213,denied,D02,PY02,D02,auth_units,"Billed 9 units, but AUTH13929 has 8 of 8 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 8 units remain on AUTH13929; bill 8 units or request an extension.,high,False,,fix_then_submit,8.0,0,
+C019220,paid,,PY03,,,No rule broken.,,,high,False,,submit,80.0,0,
+C019223,paid,,PY02,,,No rule broken.,,,high,False,,submit,176.0,0,
+C019227,paid,,PY02,,,No rule broken.,,,high,False,,submit,142.0,0,
+C019230,paid,,PY03,,,No rule broken.,,,high,False,,submit,108.0,0,
+C019231,paid,,PY02,,,No rule broken.,,,high,False,,submit,336.0,0,
+C019232,paid,,PY03,,,No rule broken.,,,high,False,,submit,208.0,0,
+C019233,paid,,PY03,,,No rule broken.,,,high,False,,submit,208.0,0,
+C019240,paid,,PY02,,,No rule broken.,,,high,False,,submit,112.0,0,
+C019248,paid,,PY03,,,No rule broken.,,,high,False,,submit,156.0,0,
+C019250,denied,D03,PY01,D03|D09,timely_filing,Submitted 78 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 33 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",medium,False,,fix_then_submit,234.0,0,
+C019259,denied,D03,PY01,D03,timely_filing,Submitted 88 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 43 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,160.0,0,
+C019263,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,216.0,0,
+C019272,paid,,PY02,,,No rule broken.,,,high,False,,submit,36.0,0,
+C019276,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,138.0,0,
+C019280,paid,,PY01,,,No rule broken.,,,high,False,,submit,46.0,0,
+C019288,paid,,PY02,,,No rule broken.,,,high,False,,submit,88.0,0,
+C019294,paid,,PY03,,,No rule broken.,,,high,False,,submit,144.0,0,
+C019300,denied,D03,PY01,D03,timely_filing,Submitted 69 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 24 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,147.0,0,
+C019308,paid,,PY01,,,No rule broken.,,,high,False,,submit,156.0,0,
+C019317,paid,,PY01,,,No rule broken.,,,high,False,,submit,13.0,0,
+C019323,paid,,PY01,,,No rule broken.,,,high,False,,submit,32.0,0,
+C019327,paid,,PY01,,,No rule broken.,,,high,False,,submit,131.0,0,
+C019329,denied,D02,PY03,D02,auth_units,"Billed 24 units, but AUTH12558 has 0 of 132 units left after earlier paid claims.",PY03 Handbook §9.2; billing_basics.md,AUTH12558 is used up. Request a new authorization or an extension before billing.,high,False,,fix_then_submit,0.0,0,
+C019336,denied,D03,PY01,D03,timely_filing,Submitted 108 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 63 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,44.0,0,
+C019340,paid,,PY03,,,No rule broken.,,,high,False,,submit,172.0,0,
+C019347,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 4 Sep 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,68.0,0,
+C019355,paid,,PY01,,,No rule broken.,,,high,False,,submit,64.0,0,
+C019361,denied,D02,PY02,D02,auth_units,"Billed 9 units, but AUTH10492 has 2 of 40 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 2 units remain on AUTH10492; bill 2 units or request an extension.,high,False,,fix_then_submit,2.0,0,
+C019362,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,56.0,0,
+C019367,paid,,PY03,,,No rule broken.,,,high,False,,submit,180.0,0,
+C019371,paid,,PY03,,,No rule broken.,,,high,False,,submit,260.0,0,
+C019378,paid,,PY01,,,No rule broken.,,,high,False,,submit,53.0,0,
+C019379,paid,,PY02,,,No rule broken.,,,high,False,,submit,160.0,0,
+C019382,paid,,PY03,,,No rule broken.,,,high,False,,submit,60.0,0,
+C019383,paid,,PY03,,,No rule broken.,,,high,False,,submit,272.0,0,
+C019388,denied,D09,PY03,D09,evv_units,"Billed 14 units, but 186 verified minutes support only 12 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 12 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,196.0,0,
+C019391,paid,,PY03,,,No rule broken.,,,high,False,,submit,40.0,0,
+C019392,paid,,PY01,,,No rule broken.,,,high,False,,submit,210.0,0,
+C019394,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,116.0,0,
+C019402,paid,,PY03,,,No rule broken.,,,high,False,,submit,108.0,0,
+C019409,paid,,PY02,,,No rule broken.,,,high,False,,submit,163.0,0,
+C019412,paid,,PY01,,,No rule broken.,,,high,False,,submit,54.0,0,
+C019419,paid,,PY01,,,No rule broken.,,,high,False,,submit,144.0,0,
+C019420,paid,,PY01,,,No rule broken.,,,high,False,,submit,109.0,0,
+C019422,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,285.0,0,
+C019430,paid,,PY01,,,No rule broken.,,,high,False,,submit,220.0,0,
+C019435,paid,,PY01,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019438,paid,,PY03,,,No rule broken.,,,high,False,,submit,100.0,0,
+C019439,paid,,PY03,,,No rule broken.,,,high,False,,submit,188.0,0,
+C019445,paid,,PY02,,,No rule broken.,,,high,False,,submit,108.0,0,
+C019447,paid,,PY03,,,No rule broken.,,,high,False,,submit,176.0,0,
+C019450,paid,,PY02,,,No rule broken.,,,high,False,,submit,206.0,0,
+C019458,paid,,PY03,,,No rule broken.,,,high,False,,submit,200.0,0,
+C019459,paid,,PY02,,,No rule broken.,,,high,False,,submit,152.0,0,
+C019463,paid,,PY02,,,No rule broken.,,,high,False,,submit,52.0,0,
+C019464,denied,D01,PY01,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY01 Manual §4.2,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,81.0,0,
+C019466,paid,,PY01,,,No rule broken.,,,high,False,,submit,346.0,0,
+C019470,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,392.0,0,
+C019471,paid,,PY02,,,No rule broken.,,,high,False,,submit,40.0,0,
+C019478,denied,D07,PY01,D07|D03,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH12965 is on file for this patient, service and date.",medium,False,,fix_then_submit,,0,
+C019487,paid,,PY01,,,No rule broken.,,,high,False,,submit,64.0,0,
+C019494,paid,,PY03,,,No rule broken.,,,high,False,,submit,252.0,0,
+C019495,paid,,PY03,,,No rule broken.,,,high,False,,submit,144.0,0,
+C019498,paid,,PY03,,,No rule broken.,,,high,False,,submit,272.0,0,
+C019504,paid,,PY02,,,No rule broken.,,,high,False,,submit,48.0,0,
+C019505,denied,D03,PY01,D03,timely_filing,Submitted 55 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 10 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,126.0,0,
+C019506,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 28 Oct 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,149.0,0,
+C019514,paid,,PY02,,,No rule broken.,,,high,False,,submit,244.0,0,
+C019518,paid,,PY02,,,No rule broken.,,,high,False,,submit,66.0,0,
+C019521,paid,,PY02,,,No rule broken.,,,high,False,,submit,366.0,0,
+C019529,paid,,PY01,,,No rule broken.,,,high,False,,submit,90.0,0,
+C019534,paid,,PY01,,,No rule broken.,,,high,False,,submit,143.0,0,
+C019541,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 19 Sep 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,182.0,0,
+C019545,paid,,PY02,,,No rule broken.,,,high,False,,submit,184.0,0,
+C019547,paid,,PY03,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019553,paid,,PY01,,,No rule broken.,,,high,False,,submit,122.0,0,
+C019556,paid,,PY03,,,No rule broken.,,,high,False,,submit,120.0,0,
+C019559,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,224.0,0,
+C019561,paid,,PY02,,,No rule broken.,,,high,False,,submit,133.0,0,
+C019566,denied,D01,PY03,D01,evv_missing,The EVV visit for this date (V003821) was rejected.,PY03 Handbook §9.1,"Correct and re-verify visit V003821, or do not bill this date.",high,False,,fix_then_submit,44.0,0,
+C019573,paid,,PY01,,,No rule broken.,,,high,False,,submit,131.0,0,
+C019577,denied,D09,PY02,D09,evv_units,"Billed 11 units, but 150 verified minutes support only 10 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 10 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,118.0,0,
+C019581,paid,,PY01,,,No rule broken.,,,high,False,,submit,42.0,0,
+C019588,paid,,PY03,,,No rule broken.,,,high,False,,submit,212.0,0,
+C019591,paid,,PY01,,,No rule broken.,,,high,False,,submit,44.0,0,
+C019597,paid,,PY01,,,No rule broken.,,,high,False,,submit,112.0,0,
+C019599,denied,D01,PY03,D01,evv_missing,The EVV visit for this date (V003828) was rejected.,PY03 Handbook §9.1,"Correct and re-verify visit V003828, or do not bill this date.",high,False,,fix_then_submit,140.0,0,
+C019600,paid,,PY02,,,No rule broken.,,,high,False,,submit,22.0,0,
+C019609,denied,D03,PY03,D03,timely_filing,Submitted 70 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 10 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,124.0,0,
+C019615,paid,,PY01,,,No rule broken.,,,high,False,,submit,36.0,0,
+C019624,paid,,PY03,,,No rule broken.,,,high,False,,submit,76.0,0,
+C019625,paid,,PY01,,,No rule broken.,,,high,False,,submit,106.0,0,
+C019627,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH13917 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 30 Sep 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH13920 is on file for this patient, service and date.",high,False,,fix_then_submit,130.0,0,
+C019632,paid,,PY02,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019635,paid,,PY01,,,No rule broken.,,,medium,True,Only 2 unit(s) would remain on the authorization; depends on earlier claims being paid,review,9.0,0,
+C019644,paid,,PY03,,,No rule broken.,,,high,False,,submit,144.0,0,
+C019650,paid,,PY01,,,No rule broken.,,,high,False,,submit,250.0,0,
+C019654,paid,,PY02,,,No rule broken.,,,high,False,,submit,60.0,0,
+C019662,paid,,PY02,,,No rule broken.,,,high,False,,submit,85.0,0,
+C019667,paid,,PY03,,,No rule broken.,,,high,False,,submit,192.0,0,
+C019674,paid,,PY03,,,No rule broken.,,,high,False,,submit,324.0,0,
+C019675,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,70.0,0,
+C019684,paid,,PY02,,,No rule broken.,,,high,False,,submit,52.0,0,
+C019690,denied,D08,PY02,D08|D06,auth_invalid,"Authorization AUTH10176 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 7 Oct 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH10181 is on file for this patient, service and date.",medium,False,,fix_then_submit,202.0,0,
+C019698,paid,,PY02,,,No rule broken.,,,high,False,,submit,54.0,0,
+C019699,paid,,PY02,,,No rule broken.,,,high,False,,submit,64.0,0,
+C019706,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,396.0,0,
+C019712,paid,,PY01,,,No rule broken.,,,high,False,,submit,174.0,0,
+C019714,paid,,PY01,,,No rule broken.,,,high,False,,submit,78.0,0,
+C019715,paid,,PY02,,,No rule broken.,,,high,False,,submit,101.0,0,
+C019716,paid,,PY02,,,No rule broken.,,,high,False,,submit,338.0,0,
+C019724,paid,,PY03,,,No rule broken.,,,high,False,,submit,72.0,0,
+C019733,paid,,PY02,,,No rule broken.,,,high,False,,submit,120.0,0,
+C019734,paid,,PY01,,,No rule broken.,,,high,False,,submit,92.0,0,
+C019741,paid,,PY01,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019750,paid,,PY02,,,No rule broken.,,,high,False,,submit,219.0,0,
+C019757,denied,D09,PY03,D09,evv_units,"Billed 34 units, but 483 verified minutes support only 32 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 32 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,100.0,0,
+C019762,denied,D03,PY01,D03|D02,timely_filing,Submitted 106 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 61 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",medium,False,,fix_then_submit,24.0,0,
+C019771,paid,,PY03,,,No rule broken.,,,high,False,,submit,132.0,0,
+C019777,paid,,PY02,,,No rule broken.,,,high,False,,submit,82.0,0,
+C019781,paid,,PY03,,,No rule broken.,,,high,False,,submit,152.0,0,
+C019787,paid,,PY03,,,No rule broken.,,,high,False,,submit,220.0,0,
+C019788,paid,,PY03,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019794,denied,D03,PY01,D03,timely_filing,Submitted 78 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 33 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,160.0,0,
+C019795,paid,,PY01,,,No rule broken.,,,high,False,,submit,103.0,0,
+C019804,denied,D09,PY02,D09,evv_units,"Billed 8 units, but 112 verified minutes support only 7 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,184.0,0,
+C019810,paid,,PY03,,,No rule broken.,,,high,False,,submit,196.0,0,
+C019817,paid,,PY03,,,No rule broken.,,,high,False,,submit,84.0,0,
+C019819,paid,,PY03,,,No rule broken.,,,high,False,,submit,132.0,0,
+C019826,paid,,PY02,,,No rule broken.,,,high,False,,submit,172.0,0,
+C019834,paid,,PY03,,,No rule broken.,,,high,False,,submit,28.0,0,
+C019841,paid,,PY01,,,No rule broken.,,,high,False,,submit,54.0,0,
+C019847,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,98.0,0,
+C019851,paid,,PY01,,,No rule broken.,,,high,False,,submit,74.0,0,
+C019859,paid,,PY01,,,No rule broken.,,,high,False,,submit,116.0,0,
+C019861,paid,,PY03,,,No rule broken.,,,high,False,,submit,104.0,0,
+C019869,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,84.0,0,
+C019872,paid,,PY02,,,No rule broken.,,,high,False,,submit,208.0,0,
+C019877,paid,,PY03,,,No rule broken.,,,high,False,,submit,128.0,0,
+C019878,denied,D07,PY03,D07,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH13133 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C019880,denied,D01,PY01,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY01 Manual §4.2,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,59.0,0,
+C019882,paid,,PY01,,,No rule broken.,,,high,False,,submit,129.0,0,
+C019885,denied,D03,PY01,D03,timely_filing,Submitted 87 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 42 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,40.0,0,
+C019890,denied,D09,PY03,D09,evv_units,"Billed 14 units, but 191 verified minutes support only 12 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 12 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,201.0,0,
+C019893,paid,,PY03,,,No rule broken.,,,high,False,,submit,140.0,0,
+C019897,denied,D07,PY01,D07,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH12276 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C019900,denied,D09,PY01,D09,evv_units,"Billed 10 units, but 138 verified minutes support only 9 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 9 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,64.0,0,
+C019909,paid,,PY03,,,No rule broken.,,,high,False,,submit,100.0,0,
+C019911,denied,D01,PY03,D01,evv_missing,The EVV visit for this date (V003887) was rejected.,PY03 Handbook §9.1,"Correct and re-verify visit V003887, or do not bill this date.",high,False,,fix_then_submit,100.0,0,
+C019913,paid,,PY02,,,No rule broken.,,,high,False,,submit,136.0,0,
+C019916,paid,,PY01,,,No rule broken.,,,high,False,,submit,84.0,0,
+C019918,paid,,PY01,,,No rule broken.,,,high,False,,submit,202.0,0,
+C019920,paid,,PY01,,,No rule broken.,,,high,False,,submit,28.0,0,
+C019929,paid,,PY02,,,No rule broken.,,,high,False,,submit,64.0,0,
+C019932,paid,,PY03,,,No rule broken.,,,high,False,,submit,60.0,0,
+C019933,denied,D07,PY03,D07,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH11348 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C019935,paid,,PY01,,,No rule broken.,,,high,False,,submit,68.0,0,
+C019937,denied,D02,PY01,D02,auth_units,"Billed 9 units, but AUTH10744 has 5 of 32 units left after earlier paid claims.",PY01 Manual §4.5; billing_basics.md,Only 5 units remain on AUTH10744; bill 5 units or request an extension.,high,False,,fix_then_submit,5.0,0,
+C019939,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 23 Oct 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,68.0,0,
+C019941,paid,,PY02,,,No rule broken.,,,high,False,,submit,28.0,0,
+C019944,denied,D09,PY02,D09,evv_units,"Billed 29 units, but 425 verified minutes support only 28 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 28 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,78.0,0,
+C019953,paid,,PY01,,,No rule broken.,,,high,False,,submit,44.0,0,
+C019958,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,193.0,0,
+C019960,paid,,PY02,,,No rule broken.,,,high,False,,submit,80.0,0,
+C019961,paid,,PY01,,,No rule broken.,,,high,False,,submit,84.0,0,
+C019968,paid,,PY01,,,No rule broken.,,,high,False,,submit,100.0,0,
+C019975,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,30.0,0,
+C019982,paid,,PY01,,,No rule broken.,,,high,False,,submit,53.0,0,
+C019985,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH11592 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 8 Nov 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH11597 is on file for this patient, service and date.",high,False,,fix_then_submit,85.0,0,
+C019992,paid,,PY02,,,No rule broken.,,,high,False,,submit,148.0,0,
+C019994,paid,,PY02,,,No rule broken.,,,high,False,,submit,84.0,0,
+C020002,paid,,PY02,,,No rule broken.,,,high,False,,submit,142.0,0,
+C020007,paid,,PY03,,,No rule broken.,,,high,False,,submit,137.0,0,
+C020008,paid,,PY01,,,No rule broken.,,,high,False,,submit,80.0,16,
+C020015,paid,,PY02,,,No rule broken.,,,high,False,,submit,166.0,0,
+C020020,paid,,PY02,,,No rule broken.,,,high,False,,submit,140.0,0,
+C020029,paid,,PY01,,,No rule broken.,,,high,False,,submit,128.0,0,
+C020036,paid,,PY02,,,No rule broken.,,,high,False,,submit,74.0,0,
+C020045,denied,D03,PY01,D03,timely_filing,Submitted 83 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 38 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,98.0,0,
+C020051,denied,D03,PY03,D03,timely_filing,Submitted 65 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 5 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,104.0,0,
+C020052,paid,,PY03,,,No rule broken.,,,high,False,,submit,76.0,0,
+C020059,paid,,PY03,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020061,paid,,PY01,,,No rule broken.,,,high,False,,submit,62.0,0,
+C020064,paid,,PY01,,,No rule broken.,,,high,False,,submit,37.0,0,
+C020071,paid,,PY01,,,No rule broken.,,,high,False,,submit,80.0,0,
+C020080,paid,,PY03,,,No rule broken.,,,high,False,,submit,128.0,0,
+C020087,paid,,PY01,,,No rule broken.,,,high,False,,submit,55.0,0,
+C020096,denied,D08,PY02,D08,auth_invalid,"Authorization AUTH10329 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 10 Nov 2026.","PY02 Billing Guide, Authorizations","Replace the authorization number. AUTH10331 is on file for this patient, service and date.",high,False,,fix_then_submit,88.0,0,
+C020100,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,86.0,0,
+C020104,paid,,PY01,,,No rule broken.,,,high,False,,submit,236.0,0,
+C020108,paid,,PY03,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020113,paid,,PY01,,,No rule broken.,,,high,False,,submit,110.0,0,
+C020116,paid,,PY01,,,No rule broken.,,,high,False,,submit,60.0,0,
+C020118,denied,D02,PY01,D02,auth_units,"Billed 8 units, but AUTH12641 has 2 of 20 units left after earlier paid claims.",PY01 Manual §4.5; billing_basics.md,Only 2 units remain on AUTH12641; bill 2 units or request an extension.,high,False,,fix_then_submit,2.0,0,
+C020123,paid,,PY03,,,No rule broken.,,,high,False,,submit,120.0,0,
+C020130,paid,,PY02,,,No rule broken.,,,medium,True,Only 1 unit(s) would remain on the authorization; depends on earlier claims being paid,review,10.0,0,
+C020133,paid,,PY03,,,No rule broken.,,,high,False,,submit,120.0,0,
+C020137,paid,,PY02,,,No rule broken.,,,high,False,,submit,24.0,0,
+C020139,paid,,PY02,,,No rule broken.,,,high,False,,submit,105.0,0,
+C020141,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,180.0,0,
+C020145,paid,,PY01,,,No rule broken.,,,high,False,,submit,98.0,0,
+C020152,paid,,PY02,,,No rule broken.,,,high,False,,submit,100.0,0,
+C020157,paid,,PY01,,,No rule broken.,,,high,False,,submit,24.0,0,
+C020166,paid,,PY01,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020172,paid,,PY03,,,No rule broken.,,,high,False,,submit,76.0,0,
+C020175,denied,D07,PY01,D07,auth_missing,The claim has no prior authorization number.,PY01 Manual §4.5,"Add the authorization number before submitting. AUTH11002 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C020178,paid,,PY03,,,No rule broken.,,,high,False,,submit,76.0,0,
+C020185,paid,,PY02,,,No rule broken.,,,high,False,,submit,120.0,0,
+C020194,paid,,PY03,,,No rule broken.,,,high,False,,submit,164.0,0,
+C020203,paid,,PY01,,,No rule broken.,,,high,False,,submit,144.0,0,
+C020210,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,119.0,0,
+C020215,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 6 Oct 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,357.0,0,
+C020219,paid,,PY03,,,No rule broken.,,,high,False,,submit,96.0,0,
+C020222,paid,,PY01,,,No rule broken.,,,high,False,,submit,80.0,0,
+C020226,paid,,PY03,,,No rule broken.,,,high,False,,submit,144.0,0,
+C020229,paid,,PY02,,,No rule broken.,,,high,False,,submit,404.0,0,
+C020233,paid,,PY02,,,No rule broken.,,,high,False,,submit,92.0,0,
+C020240,paid,,PY03,,,No rule broken.,,,high,False,,submit,92.0,0,
+C020244,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,214.0,0,
+C020251,paid,,PY03,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020258,paid,,PY01,,,No rule broken.,,,high,False,,submit,50.0,0,
+C020264,paid,,PY03,,,No rule broken.,,,high,False,,submit,54.0,0,
+C020273,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,118.0,0,
+C020281,denied,D05,PY03,D05,duplicate,"Claim C021727 was already submitted for this payer, patient, service and date of service (4 Oct 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021727, send it as a corrected claim (frequency code 7) with C021727 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,172.0,16,C021727
+C020288,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,76.0,0,
+C020294,denied,D02,PY02,D02,auth_units,"Billed 20 units, but AUTH10768 has 6 of 52 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 6 units remain on AUTH10768; bill 6 units or request an extension.,high,False,,fix_then_submit,6.0,0,
+C020302,paid,,PY01,,,No rule broken.,,,high,False,,submit,52.0,0,
+C020307,paid,,PY01,,,No rule broken.,,,high,False,,submit,24.0,0,
+C020312,denied,D09,PY03,D09,evv_units,"Billed 8 units, but 113 verified minutes support only 7 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,24.0,0,
+C020321,denied,D09,PY01,D09,evv_units,"Billed 38 units, but 538 verified minutes support only 36 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 36 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,104.0,0,
+C020322,paid,,PY02,,,No rule broken.,,,high,False,,submit,68.0,0,
+C020324,paid,,PY02,,,No rule broken.,,,high,False,,submit,60.0,0,
+C020331,paid,,PY03,,,No rule broken.,,,high,False,,submit,244.0,0,
+C020333,paid,,PY02,,,No rule broken.,,,high,False,,submit,18.0,0,
+C020342,denied,D01,PY01,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY01 Manual §4.2,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,100.0,0,
+C020349,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,156.0,0,
+C020352,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,123.0,0,
+C020358,paid,,PY01,,,No rule broken.,,,high,False,,submit,54.0,0,
+C020364,paid,,PY01,,,No rule broken.,,,high,False,,submit,40.0,0,
+C020365,paid,,PY01,,,No rule broken.,,,high,False,,submit,171.0,0,
+C020368,denied,D02,PY03,D02,auth_units,"Billed 18 units, but AUTH12558 has 0 of 132 units left after earlier paid claims.",PY03 Handbook §9.2; billing_basics.md,AUTH12558 is used up. Request a new authorization or an extension before billing.,high,False,,fix_then_submit,0.0,0,
+C020371,paid,,PY03,,,No rule broken.,,,high,False,,submit,188.0,0,
+C020379,paid,,PY03,,,No rule broken.,,,high,False,,submit,120.0,0,
+C020388,paid,,PY03,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020395,paid,,PY03,,,No rule broken.,,,high,False,,submit,84.0,0,
+C020398,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 30 Sep 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,152.0,0,
+C020406,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 17 Oct 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,104.0,0,
+C020410,paid,,PY02,,,No rule broken.,,,high,False,,submit,180.0,0,
+C020417,paid,,PY02,,,No rule broken.,,,high,False,,submit,136.0,0,
+C020420,paid,,PY03,,,No rule broken.,,,high,False,,submit,188.0,0,
+C020424,denied,D03,PY01,D03,timely_filing,Submitted 106 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 61 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,46.0,0,
+C020429,paid,,PY03,,,No rule broken.,,,high,False,,submit,164.0,0,
+C020433,paid,,PY03,,,No rule broken.,,,high,False,,submit,72.0,0,
+C020434,paid,,PY02,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020439,paid,,PY02,,,No rule broken.,,,high,False,,submit,62.0,0,
+C020441,denied,D09,PY01,D09,evv_units,"Billed 8 units, but 112 verified minutes support only 7 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,332.0,0,
+C020450,denied,D05,PY02,D05,duplicate,"Claim C021755 was already submitted for this payer, patient, service and date of service (7 Oct 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C021755, send it as a corrected claim (frequency code 7) with C021755 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,286.0,16,C021755
+C020456,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 5 Oct 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,232.0,0,
+C020457,paid,,PY03,,,No rule broken.,,,high,False,,submit,201.0,0,
+C020465,paid,,PY01,,,No rule broken.,,,high,False,,submit,96.0,0,
+C020470,paid,,PY02,,,No rule broken.,,,high,False,,submit,224.0,0,
+C020474,paid,,PY02,,,No rule broken.,,,high,False,,submit,84.0,0,
+C020483,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,184.0,0,
+C020490,paid,,PY01,,,No rule broken.,,,high,False,,submit,118.0,0,
+C020497,paid,,PY02,,,No rule broken.,,,high,False,,submit,206.0,0,
+C020505,paid,,PY03,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020511,paid,,PY02,,,No rule broken.,,,high,False,,submit,24.0,0,
+C020515,denied,D07,PY03,D07,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH10597 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C020516,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,192.0,0,
+C020523,paid,,PY02,,,No rule broken.,,,high,False,,submit,164.0,0,
+C020531,denied,D09,PY03,D09,evv_units,"Billed 26 units, but 366 verified minutes support only 24 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 24 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,176.0,0,
+C020532,paid,,PY01,,,No rule broken.,,,high,False,,submit,95.0,0,
+C020537,denied,D07,PY03,D07|D09,auth_missing,The claim has no prior authorization number.,PY03 Handbook §9.2,"Add the authorization number before submitting. AUTH12126 is on file for this patient, service and date.",medium,False,,fix_then_submit,,0,
+C020546,paid,,PY01,,,No rule broken.,,,high,False,,submit,156.0,0,
+C020555,paid,,PY02,,,No rule broken.,,,high,False,,submit,220.0,0,
+C020556,paid,,PY03,,,No rule broken.,,,high,False,,submit,196.0,0,
+C020563,paid,,PY03,,,No rule broken.,,,high,False,,submit,32.0,0,
+C020569,paid,,PY01,,,No rule broken.,,,high,False,,submit,200.0,0,
+C020570,denied,D05,PY01,D05,duplicate,"Claim C021731 was already submitted for this payer, patient, service and date of service (30 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021731, send it as a corrected claim (frequency code 7) with C021731 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,91.0,14,C021731
+C020577,denied,D03,PY01,D03,timely_filing,Submitted 61 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 16 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,174.0,0,
+C020586,paid,,PY03,,,No rule broken.,,,high,False,,submit,220.0,0,
+C020593,denied,D09,PY02,D09,evv_units,"Billed 9 units, but 128 verified minutes support only 8 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,72.0,0,
+C020596,paid,,PY03,,,No rule broken.,,,high,False,,submit,192.0,0,
+C020605,paid,,PY01,,,No rule broken.,,,high,False,,submit,84.0,0,
+C020611,paid,,PY01,,,No rule broken.,,,high,False,,submit,280.0,0,
+C020616,paid,,PY01,,,No rule broken.,,,high,False,,submit,108.0,0,
+C020623,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 13 Sep 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,192.0,0,
+C020626,paid,,PY03,,,No rule broken.,,,high,False,,submit,44.0,0,
+C020633,paid,,PY02,,,No rule broken.,,,high,False,,submit,104.0,0,
+C020637,paid,,PY02,,,No rule broken.,,,high,False,,submit,90.0,0,
+C020639,paid,,PY03,,,No rule broken.,,,high,False,,submit,80.0,0,
+C020648,paid,,PY03,,,No rule broken.,,,high,False,,submit,68.0,0,
+C020651,paid,,PY02,,,No rule broken.,,,high,False,,submit,24.0,0,
+C020658,paid,,PY03,,,No rule broken.,,,high,False,,submit,84.0,0,
+C020667,paid,,PY01,,,No rule broken.,,,high,False,,submit,204.0,0,
+C020674,paid,,PY01,,,No rule broken.,,,high,False,,submit,145.0,0,
+C020683,denied,D09,PY01,D09|D02,evv_units,"Billed 9 units, but 127 verified minutes support only 8 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",medium,False,,fix_then_submit,6.0,0,
+C020684,denied,D03,PY03,D03,timely_filing,Submitted 109 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 49 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,82.0,0,
+C020691,denied,D04,PY02,D04,modifier,T1019 on Wednesday 14 Oct 2026 needs modifier U2; the claim has U1.,"PY02 Billing Guide, Modifiers + Provider Notice 2026-08",Change the modifier to U2.,high,False,,fix_then_submit,78.0,0,
+C020700,paid,,PY03,,,No rule broken.,,,high,False,,submit,216.0,0,
+C020706,paid,,PY01,,,No rule broken.,,,high,False,,submit,56.0,0,
+C020708,paid,,PY01,,,No rule broken.,,,high,False,,submit,168.0,0,
+C020709,paid,,PY02,,,No rule broken.,,,high,False,,submit,392.0,0,
+C020714,denied,D02,PY01,D02,auth_units,"Billed 16 units, but AUTH11275 has 6 of 24 units left after earlier paid claims.",PY01 Manual §4.5; billing_basics.md,Only 6 units remain on AUTH11275; bill 6 units or request an extension.,high,False,,fix_then_submit,6.0,0,
+C020718,paid,,PY02,,,No rule broken.,,,high,False,,submit,170.0,0,
+C020724,denied,D02,PY02,D02,auth_units,"Billed 12 units, but AUTH11022 has 10 of 56 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 10 units remain on AUTH11022; bill 10 units or request an extension.,high,False,,fix_then_submit,10.0,0,
+C020730,paid,,PY01,,,No rule broken.,,,high,False,,submit,42.0,0,
+C020734,paid,,PY02,,,No rule broken.,,,high,False,,submit,91.0,0,
+C020735,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 15 Oct 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,261.0,0,
+C020741,paid,,PY01,,,No rule broken.,,,high,False,,submit,76.0,0,
+C020743,paid,,PY03,,,No rule broken.,,,high,False,,submit,88.0,0,
+C020745,denied,D03,PY01,D03,timely_filing,Submitted 93 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 48 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,172.0,0,
+C020748,denied,D01,PY01,D01,evv_missing,The only EVV visit for this date (V004046) is awaiting verification after a manual edit.,PY01 Manual §4.2,Hold: do not submit yet. Submit once V004046 is verified.,high,False,,hold,116.0,0,
+C020752,denied,D01,PY01,D01,evv_missing,The only EVV visit for this date (V004047) is awaiting verification after a manual edit.,PY01 Manual §4.2,Hold: do not submit yet. Submit once V004047 is verified.,high,False,,hold,264.0,0,
+C020756,paid,,PY01,,,No rule broken.,,,high,False,,submit,21.0,0,
+C020765,paid,,PY01,,,No rule broken.,,,high,False,,submit,186.0,0,
+C020774,paid,,PY03,,,No rule broken.,,,high,False,,submit,176.0,0,
+C020782,denied,D08,PY01,D08,auth_invalid,"Authorization AUTH12626 is not valid for this claim: it runs 1 Jun 2026 to 31 Aug 2026, the date of service is 30 Oct 2026.",PY01 Manual §4.5,"Replace the authorization number. AUTH12629 is on file for this patient, service and date.",high,False,,fix_then_submit,45.0,0,
+C020790,paid,,PY01,,,No rule broken.,,,high,False,,submit,145.0,0,
+C020791,paid,,PY03,,,No rule broken.,,,high,False,,submit,84.0,0,
+C020792,denied,D03,PY01,D03,timely_filing,Submitted 49 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 4 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,93.0,0,
+C020798,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,134.0,0,
+C020807,paid,,PY01,,,No rule broken.,,,high,False,,submit,144.0,0,
+C020816,paid,,PY02,,,No rule broken.,,,high,False,,submit,123.0,0,
+C020822,denied,D05,PY03,D03|D05,duplicate,"Claim C021742 was already submitted for this payer, patient, service and date of service (19 Oct 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C021742, send it as a corrected claim (frequency code 7) with C021742 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,60.0,0,C021742
+C020830,paid,,PY01,,,No rule broken.,,,high,False,,submit,152.0,0,
+C020831,paid,,PY01,,,No rule broken.,,,high,False,,submit,100.0,0,
+C020836,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,24.0,0,
+C020840,denied,D09,PY02,D09,evv_units,"Billed 8 units, but 110 verified minutes support only 7 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,378.0,0,
+C020847,paid,,PY03,,,No rule broken.,,,high,False,,submit,148.0,0,
+C020848,paid,,PY03,,,No rule broken.,,,high,False,,submit,80.0,0,
+C020852,paid,,PY01,,,No rule broken.,,,high,False,,submit,126.0,0,
+C020858,paid,,PY03,,,No rule broken.,,,high,False,,submit,132.0,0,
+C020859,denied,D04,PY02,D04,modifier,T1019 on Tuesday 13 Oct 2026 needs modifier U2; the claim has U1.,"PY02 Billing Guide, Modifiers + Provider Notice 2026-08",Change the modifier to U2.,high,False,,fix_then_submit,57.0,0,
+C020865,denied,D03,PY01,D03,timely_filing,Submitted 106 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 61 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,88.0,0,
+C020867,paid,,PY02,,,No rule broken.,,,high,False,,submit,69.0,0,
+C020874,paid,,PY02,,,No rule broken.,,,high,False,,submit,220.0,0,
+C020879,paid,,PY01,,,No rule broken.,,,high,False,,submit,22.0,0,
+C020880,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,108.0,0,
+C020888,paid,,PY03,,,No rule broken.,,,high,False,,submit,108.0,0,
+C020890,paid,,PY01,,,No rule broken.,,,high,False,,submit,116.0,0,
+C020898,denied,D09,PY02,D09,evv_units,"Billed 8 units, but 108 verified minutes support only 7 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 7 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,108.0,0,
+C020903,denied,D09,PY02,D09,evv_units,"Billed 19 units, but 275 verified minutes support only 18 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 18 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,104.0,0,
+C020904,paid,,PY03,,,No rule broken.,,,high,False,,submit,168.0,0,
+C020905,denied,D09,PY02,D09,evv_units,"Billed 32 units, but 422 verified minutes support only 28 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 28 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,184.0,0,
+C020906,paid,,PY02,,,No rule broken.,,,high,False,,submit,196.0,0,
+C020914,denied,D03,PY01,D03,timely_filing,Submitted 57 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 12 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,174.0,0,
+C020922,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,68.0,0,
+C020930,paid,,PY01,,,No rule broken.,,,high,False,,submit,124.0,0,
+C020931,denied,D01,PY02,D01,evv_missing,The EVV visit for this date (V004082) was rejected.,"PY02 Billing Guide, Visit verification","Correct and re-verify visit V004082, or do not bill this date.",high,False,,fix_then_submit,120.0,0,
+C020932,denied,D09,PY01,D09,evv_units,"Billed 26 units, but 364 verified minutes support only 24 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 24 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,70.0,0,
+C020934,paid,,PY02,,,No rule broken.,,,high,False,,submit,18.0,0,
+C020938,denied,D09,PY02,D09,evv_units,"Billed 13 units, but 141 verified minutes support only 9 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 9 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,32.0,0,
+C020947,denied,D03,PY01,D03|D09,timely_filing,Submitted 76 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 31 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",medium,False,,fix_then_submit,76.0,0,
+C020955,paid,,PY01,,,No rule broken.,,,high,False,,submit,258.0,0,
+C020959,paid,,PY02,,,No rule broken.,,,high,False,,submit,348.0,0,
+C020964,paid,,PY02,,,No rule broken.,,,high,False,,submit,73.0,0,
+C020965,paid,,PY01,,,No rule broken.,,,high,False,,submit,92.0,0,
+C020970,paid,,PY01,,,No rule broken.,,,high,False,,submit,112.0,0,
+C020975,denied,D03,PY01,D03,timely_filing,Submitted 82 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 37 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,182.0,0,
+C020980,denied,D06,PY02,D06,daily_max,The patient already has 0 paid units on 7 Sep 2026; 36 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 32 more units can be paid for this day; reduce the claim to 32 units.,high,False,,fix_then_submit,232.0,0,
+C020987,paid,,PY03,,,No rule broken.,,,high,False,,submit,264.0,0,
+C020990,paid,,PY03,,,No rule broken.,,,high,False,,submit,172.0,0,
+C020995,paid,,PY02,,,No rule broken.,,,high,False,,submit,140.0,0,
+C021003,paid,,PY01,,,No rule broken.,,,high,False,,submit,150.0,0,
+C021008,paid,,PY02,,,No rule broken.,,,high,False,,submit,86.0,0,
+C021014,paid,,PY02,,,No rule broken.,,,high,False,,submit,77.0,0,
+C021015,paid,,PY02,,,No rule broken.,,,high,False,,submit,27.0,0,
+C021017,denied,D01,PY03,D01,evv_missing,The only EVV visit for this date (V004101) is awaiting verification after a manual edit.,PY03 Handbook §9.1,Hold: do not submit yet. Submit once V004101 is verified.,high,False,,hold,96.0,0,
+C021021,paid,,PY03,,,No rule broken.,,,high,False,,submit,156.0,0,
+C021025,paid,,PY03,,,No rule broken.,,,high,False,,submit,164.0,0,
+C021033,paid,,PY03,,,No rule broken.,,,high,False,,submit,52.0,0,
+C021039,paid,,PY01,,,No rule broken.,,,high,False,,submit,53.0,0,
+C021044,paid,,PY03,,,No rule broken.,,,high,False,,submit,76.0,0,
+C021053,paid,,PY03,,,No rule broken.,,,high,False,,submit,180.0,0,
+C021057,paid,,PY02,,,No rule broken.,,,high,False,,submit,160.0,0,
+C021061,paid,,PY02,,,No rule broken.,,,high,False,,submit,29.0,0,
+C021067,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,114.0,0,
+C021069,paid,,PY02,,,No rule broken.,,,high,False,,submit,56.0,0,
+C021070,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,194.0,0,
+C021075,paid,,PY02,,,No rule broken.,,,high,False,,submit,28.0,0,
+C021078,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,54.0,0,
+C021087,paid,,PY02,,,No rule broken.,,,high,False,,submit,92.0,0,
+C021093,denied,D09,PY03,D09,evv_units,"Billed 12 units, but 120 verified minutes support only 8 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 8 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,108.0,0,
+C021101,paid,,PY01,,,No rule broken.,,,high,False,,submit,168.0,0,
+C021106,paid,,PY02,,,No rule broken.,,,high,False,,submit,166.0,0,
+C021108,paid,,PY01,,,No rule broken.,,,high,False,,submit,80.0,0,
+C021112,paid,,PY01,,,No rule broken.,,,high,False,,submit,31.0,0,
+C021119,paid,,PY01,,,No rule broken.,,,high,False,,submit,132.0,0,
+C021127,paid,,PY01,,,No rule broken.,,,high,False,,submit,10.0,0,
+C021133,paid,,PY01,,,No rule broken.,,,high,False,,submit,112.0,0,
+C021140,denied,D09,PY02,D09,evv_units,"Billed 24 units, but 353 verified minutes support only 23 (complete 15-minute units only).","PY02 Billing Guide, Visit verification","Reduce the claim to 23 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,248.0,0,
+C021147,paid,,PY02,,,No rule broken.,,,high,False,,submit,32.0,0,
+C021149,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,110.0,0,
+C021158,denied,D03,PY01,D03,timely_filing,Submitted 57 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 12 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,25.0,0,
+C021161,denied,D09,PY01,D09,evv_units,"Billed 17 units, but 234 verified minutes support only 16 (8-minute rule).",PY01 Manual §4.3,"Reduce the claim to 16 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,54.0,0,
+C021162,paid,,PY01,,,No rule broken.,,,high,False,,submit,26.0,0,
+C021163,paid,,PY01,,,No rule broken.,,,high,False,,submit,232.0,0,
+C021169,paid,,PY01,,,No rule broken.,,,high,False,,submit,138.0,0,
+C021173,paid,,PY03,,,No rule broken.,,,high,False,,submit,204.0,0,
+C021177,paid,,PY01,,,No rule broken.,,,high,False,,submit,152.0,0,
+C021181,paid,,PY01,,,No rule broken.,,,high,False,,submit,112.0,0,
+C021182,paid,,PY01,,,No rule broken.,,,high,False,,submit,112.0,0,
+C021190,paid,,PY02,,,No rule broken.,,,high,False,,submit,180.0,0,
+C021195,paid,,PY01,,,No rule broken.,,,high,False,,submit,19.0,0,
+C021199,paid,,PY01,,,No rule broken.,,,high,False,,submit,286.0,0,
+C021207,denied,D03,PY01,D03,timely_filing,Submitted 65 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 20 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,56.0,0,
+C021216,paid,,PY01,,,No rule broken.,,,high,False,,submit,128.0,0,
+C021221,paid,,PY03,,,No rule broken.,,,high,False,,submit,232.0,0,
+C021224,denied,D07,PY02,D07,auth_missing,The claim has no prior authorization number.,"PY02 Billing Guide, Authorizations","Add the authorization number before submitting. AUTH13714 is on file for this patient, service and date.",high,False,,fix_then_submit,,0,
+C021231,paid,,PY03,,,No rule broken.,,,high,False,,submit,72.0,0,
+C021236,paid,,PY02,,,No rule broken.,,,high,False,,submit,73.0,0,
+C021242,denied,D01,PY03,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.",PY03 Handbook §9.1,Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,192.0,0,
+C021243,paid,,PY01,,,No rule broken.,,,high,False,,submit,33.0,0,
+C021249,denied,D01,PY02,D01,evv_missing,The only EVV visit for this date (V004145) is awaiting verification after a manual edit.,"PY02 Billing Guide, Visit verification",Hold: do not submit yet. Submit once V004145 is verified.,high,False,,hold,94.0,0,
+C021256,paid,,PY01,,,No rule broken.,,,high,False,,submit,88.0,0,
+C021262,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,278.0,0,
+C021269,paid,,PY03,,,No rule broken.,,,high,False,,submit,56.0,0,
+C021275,paid,,PY02,,,No rule broken.,,,high,False,,submit,378.0,0,
+C021276,paid,,PY01,,,No rule broken.,,,high,False,,submit,158.0,0,
+C021285,denied,D01,PY02,D01,evv_missing,"No EVV visit is recorded for this patient, service and date of service.","PY02 Billing Guide, Visit verification",Check the date of service and service code against the visit record; bill only verified visits.,high,False,,fix_then_submit,72.0,0,
+C021287,denied,D02,PY02,D02,auth_units,"Billed 24 units, but AUTH13714 has 11 of 92 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 11 units remain on AUTH13714; bill 11 units or request an extension.,high,False,,fix_then_submit,11.0,0,
+C021292,denied,D03,PY01,D03|D02,timely_filing,Submitted 68 days after the date of service; the limit is 45 days.,PY01 Manual §6.1 + Bulletin 2026-07,"Past the 45-day filing limit by 23 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",medium,False,,fix_then_submit,28.0,0,
+C021301,paid,,PY02,,,No rule broken.,,,high,False,,submit,28.0,0,
+C021302,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,96.0,0,
+C021308,denied,D09,PY03,D09,evv_units,"Billed 17 units, but 246 verified minutes support only 16 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 16 units, or correct the EVV record if the visit was longer.",high,False,,fix_then_submit,52.0,0,
+C021310,paid,,PY03,,,No rule broken.,,,high,False,,submit,120.0,0,
+C021316,paid,,PY02,,,No rule broken.,,,high,False,,submit,84.0,0,
+C021325,paid,,PY03,,,No rule broken.,,,high,False,,submit,100.0,0,
+C021326,paid,,PY02,,,No rule broken.,,,high,False,,submit,68.0,0,
+C021331,denied,D06,PY02,D06,daily_max,The patient already has 20 paid units on 14 Sep 2026; 16 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 12 more units can be paid for this day; reduce the claim to 12 units.,high,False,,fix_then_submit,24.0,20,
+C021333,paid,,PY02,,,No rule broken.,,,high,False,,submit,68.0,0,
+C021334,denied,D06,PY02,D06,daily_max,The patient already has 16 paid units on 1 Nov 2026; 20 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 16 more units can be paid for this day; reduce the claim to 16 units.,high,False,,fix_then_submit,104.0,16,
+C021336,paid,,PY02,,,No rule broken.,,,high,False,,submit,58.0,0,
+C021344,denied,D06,PY02,D06,daily_max,The patient already has 24 paid units on 23 Oct 2026; 20 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 8 more units can be paid for this day; reduce the claim to 8 units.,high,False,,fix_then_submit,40.0,24,
+C021346,paid,,PY02,,,No rule broken.,,,high,False,,submit,48.0,0,
+C021351,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,100.0,16,
+C021357,paid,,PY02,,,No rule broken.,,,high,False,,submit,132.0,0,
+C021362,paid,,PY02,,,No rule broken.,,,medium,True,Close to the daily unit maximum; depends on earlier claims being paid,review,52.0,16,
+C021366,paid,,PY02,,,No rule broken.,,,high,False,,submit,100.0,0,
+C021368,denied,D06,PY02,D06,daily_max,The patient already has 16 paid units on 2 Nov 2026; 20 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 16 more units can be paid for this day; reduce the claim to 16 units.,high,False,,fix_then_submit,96.0,16,
+C021374,denied,D02,PY02,D02,auth_units,"Billed 16 units, but AUTH10119 has 8 of 24 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 8 units remain on AUTH10119; bill 8 units or request an extension.,high,False,,fix_then_submit,8.0,0,
+C021383,paid,,PY02,,,No rule broken.,,,high,False,,submit,36.0,0,
+C021390,paid,,PY02,,,No rule broken.,,,high,False,,submit,102.0,0,
+C021393,denied,D06,PY02,D06,daily_max,The patient already has 24 paid units on 20 Oct 2026; 20 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 8 more units can be paid for this day; reduce the claim to 8 units.,high,False,,fix_then_submit,46.0,24,
+C021401,paid,,PY02,,,No rule broken.,,,high,False,,submit,40.0,0,
+C021407,denied,D06,PY02,D06,daily_max,The patient already has 20 paid units on 11 Sep 2026; 20 more would pass the daily maximum of 32.,"PY02 Billing Guide, Daily maximum",At most 12 more units can be paid for this day; reduce the claim to 12 units.,high,False,,fix_then_submit,136.0,20,
+C021582,denied,D05,PY01,D03|D05,duplicate,"Claim C013767 was already submitted for this payer, patient, service and date of service (29 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C013767, send it as a corrected claim (frequency code 7) with C013767 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,120.0,24,C013767
+C021585,denied,D05,PY03,D05,duplicate,"Claim C005761 was already submitted for this payer, patient, service and date of service (4 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C005761, send it as a corrected claim (frequency code 7) with C005761 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,100.0,8,C005761
+C021592,denied,D05,PY02,D05|D06,duplicate,"Claim C004966 was already submitted for this payer, patient, service and date of service (30 Sep 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C004966, send it as a corrected claim (frequency code 7) with C004966 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,261.0,30,C004966
+C021600,denied,D05,PY01,D05,duplicate,"Claim C009601 was already submitted for this payer, patient, service and date of service (8 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C009601, send it as a corrected claim (frequency code 7) with C009601 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,48.0,10,C009601
+C021609,denied,D05,PY02,D05,duplicate,"Claim C008546 was already submitted for this payer, patient, service and date of service (13 Oct 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C008546, send it as a corrected claim (frequency code 7) with C008546 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,114.0,8,C008546
+C021615,denied,D05,PY01,D03|D05,duplicate,"Claim C015488 was already submitted for this payer, patient, service and date of service (14 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C015488, send it as a corrected claim (frequency code 7) with C015488 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,40.0,0,C015488
+C021620,denied,D05,PY03,D05,duplicate,"Claim C006284 was already submitted for this payer, patient, service and date of service (14 Oct 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C006284, send it as a corrected claim (frequency code 7) with C006284 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,136.0,24,C006284
+C021628,denied,D05,PY02,D05|D06,duplicate,"Claim C002392 was already submitted for this payer, patient, service and date of service (16 Oct 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C002392, send it as a corrected claim (frequency code 7) with C002392 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,160.0,24,C002392
+C021632,denied,D05,PY03,D05,duplicate,"Claim C018570 was already submitted for this payer, patient, service and date of service (12 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C018570, send it as a corrected claim (frequency code 7) with C018570 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,120.0,20,C018570
+C021640,denied,D05,PY01,D05,duplicate,"Claim C018128 was already submitted for this payer, patient, service and date of service (11 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C018128, send it as a corrected claim (frequency code 7) with C018128 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,48.0,0,C018128
+C021642,denied,D05,PY02,D05|D06,duplicate,"Claim C016915 was already submitted for this payer, patient, service and date of service (12 Oct 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C016915, send it as a corrected claim (frequency code 7) with C016915 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,158.0,28,C016915
+C021649,denied,D05,PY01,D03|D05,duplicate,"Claim C018412 was already submitted for this payer, patient, service and date of service (22 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C018412, send it as a corrected claim (frequency code 7) with C018412 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,155.0,32,C018412
+C021652,denied,D05,PY03,D05,duplicate,"Claim C008504 was already submitted for this payer, patient, service and date of service (18 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C008504, send it as a corrected claim (frequency code 7) with C008504 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,176.0,0,C008504
+C021661,denied,D05,PY01,D05,duplicate,"Claim C004784 was already submitted for this payer, patient, service and date of service (14 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C004784, send it as a corrected claim (frequency code 7) with C004784 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,122.0,30,C004784
+C021670,denied,D05,PY01,D05,duplicate,"Claim C005356 was already submitted for this payer, patient, service and date of service (18 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C005356, send it as a corrected claim (frequency code 7) with C005356 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,50.0,6,C005356
+C021672,denied,D05,PY01,D05,duplicate,"Claim C008316 was already submitted for this payer, patient, service and date of service (28 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C008316, send it as a corrected claim (frequency code 7) with C008316 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,131.0,7,C008316
+C021675,denied,D05,PY01,D05,duplicate,"Claim C008989 was already submitted for this payer, patient, service and date of service (10 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C008989, send it as a corrected claim (frequency code 7) with C008989 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,157.0,12,C008989
+C021680,denied,D05,PY03,D03|D05,duplicate,"Claim C017665 was already submitted for this payer, patient, service and date of service (25 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C017665, send it as a corrected claim (frequency code 7) with C017665 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,120.0,0,C017665
+C021682,denied,D05,PY01,D05,duplicate,"Claim C005070 was already submitted for this payer, patient, service and date of service (5 Oct 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C005070, send it as a corrected claim (frequency code 7) with C005070 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,157.0,36,C005070
+C021691,denied,D05,PY03,D05,duplicate,"Claim C004524 was already submitted for this payer, patient, service and date of service (4 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C004524, send it as a corrected claim (frequency code 7) with C004524 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,16.0,12,C004524
+C021700,denied,D05,PY01,D09|D05,duplicate,"Claim C011197 was already submitted for this payer, patient, service and date of service (9 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C011197, send it as a corrected claim (frequency code 7) with C011197 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,245.0,0,C011197
+C021703,denied,D05,PY02,D09|D05|D06,duplicate,"Claim C004766 was already submitted for this payer, patient, service and date of service (4 Sep 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C004766, send it as a corrected claim (frequency code 7) with C004766 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,278.0,0,C004766
+C021707,denied,D05,PY02,D05|D06,duplicate,"Claim C002336 was already submitted for this payer, patient, service and date of service (29 Sep 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C002336, send it as a corrected claim (frequency code 7) with C002336 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,102.0,20,C002336
+C021709,denied,D05,PY03,D05,duplicate,"Claim C000490 was already submitted for this payer, patient, service and date of service (11 Sep 2026).",PY03 Handbook §9.4; billing_basics.md,"Do not submit as a new claim. If this corrects C000490, send it as a corrected claim (frequency code 7) with C000490 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,32.0,24,C000490
+C021718,denied,D05,PY01,D05,duplicate,"Claim C005671 was already submitted for this payer, patient, service and date of service (10 Sep 2026).",PY01 Manual §6.4; billing_basics.md,"Do not submit as a new claim. If this corrects C005671, send it as a corrected claim (frequency code 7) with C005671 as the original claim; otherwise withdraw it.",high,False,,fix_then_submit,140.0,20,C005671
+C021724,denied,D05,PY02,D05|D06,duplicate,"Claim C014499 was already submitted for this payer, patient, service and date of service (3 Sep 2026).","PY02 Billing Guide, Duplicates; billing_basics.md","Do not submit as a new claim. If this corrects C014499, send it as a corrected claim (frequency code 7) with C014499 as the original claim; otherwise withdraw it.",medium,False,,fix_then_submit,154.0,18,C014499
+C021727,paid,,PY03,,,No rule broken.,,,high,False,,submit,188.0,0,
+C021731,paid,,PY01,,,No rule broken.,,,high,False,,submit,105.0,0,
+C021733,paid,,PY01,,,No rule broken.,,,high,False,,submit,70.0,0,
+C021742,denied,D03,PY03,D03,timely_filing,Submitted 106 days after the date of service; the limit is 60 days.,PY03 Handbook §9.3,"Past the 60-day filing limit by 46 day(s). Resubmitting will not help; consider a write-off, or an appeal if there is proof of earlier submission.",high,False,,fix_then_submit,60.0,0,
+C021747,paid,,PY03,,,No rule broken.,,,high,False,,submit,140.0,0,
+C021748,paid,,PY01,,,No rule broken.,,,high,False,,submit,159.0,0,
+C021753,paid,,PY03,,,No rule broken.,,,high,False,,submit,48.0,0,
+C021755,paid,,PY02,,,No rule broken.,,,high,False,,submit,334.0,0,
+C021761,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,362.0,0,C017840
+C021766,denied,D09,PY03,D09,evv_units,"Billed 21 units, but 309 verified minutes support only 20 (complete 15-minute units only).",PY03 Handbook §9.1,"Reduce the claim to 20 units, or correct the EVV record if the visit was longer.",medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,124.0,0,C016750
+C021769,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,119.0,0,C005497
+C021770,paid,,PY01,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,140.0,0,C010598
+C021774,paid,,PY01,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,61.0,0,C004319
+C021776,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against; Only 2 unit(s) would remain on the authorization; depends on earlier claims being paid,review,30.0,0,C018284
+C021779,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,136.0,0,C016587
+C021784,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,84.0,0,C004639
+C021790,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,96.0,0,C008176
+C021797,denied,D02,PY02,D02,auth_units,"Billed 28 units, but AUTH13816 has 18 of 24 units left after earlier paid claims.","PY02 Billing Guide, Authorizations; billing_basics.md",Only 18 units remain on AUTH13816; bill 18 units or request an extension.,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,18.0,0,C007413
+C021800,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,136.0,0,C013146
+C021801,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,104.0,0,C003261
+C021802,paid,,PY03,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,144.0,0,C011312
+C021803,paid,,PY02,,,No rule broken.,,,medium,True,Corrected claim (frequency 7): no history examples to check the prediction against,review,48.0,0,C012569

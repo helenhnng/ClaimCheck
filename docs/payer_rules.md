@@ -114,6 +114,16 @@ ALL:
 
 ---
 
+### Status after checking on the dev split (evidence in `docs/findings.md`)
+- **2 Duplicate scope:** confirmed for frequency 1 (an earlier denied claim still makes a duplicate). Frequency 7 cannot be checked: history has none.
+- **3 Partial auth exhaustion:** confirmed. The whole claim is denied; only paid claims draw down.
+- **4 PY02 daily max:** confirmed. Submission order, paid units only, all services.
+- **9 Data quirks:** resolved in cleaning.
+- **10 Ordering:** confirmed. History and to-check claims form one timeline.
+- **1, 5, 6, 7, 8:** still open.
+
+---
+
 ## 6. Findings from the claims history (remarks)
 
 > Source: `remark` column of `claims_history.csv` (after removing duplicates). Remarks are written **after** the payer decides, so they help discover rules but must **never** be used as a model input (`claims_to_check.csv` has no remarks).

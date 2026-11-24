@@ -177,14 +177,106 @@ def check_evv_units(claim: dict, ctx: ClaimContext, cfg: dict) -> RuleHit | None
     )
 
 
+def check_duplicate(claim: dict, ctx: ClaimContext, cfg: dict) -> RuleHit | None:
+    if ctx.dup_of_claim_id is None:
+        return None
+    if claim["frequency_code"] not in cfg["global"]["duplicate_frequency_codes"]:
+        return None  # a corrected claim (frequency 7) is never a duplicate
+    first = ctx.dup_of_claim_id
+    return RuleHit(
+        rule_id="duplicate", denial_code="D05",
+        message=(
+            f"Claim {first} was already submitted for this payer, patient, service and "
+            f"date of service ({_fmt(claim['date_of_service'])})."
+        ),
+        citation=payer_config(cfg, claim["payer_id"])["citations"]["duplicate"] + "; billing_basics.md",
+        fix=(
+            f"Do not submit as a new claim. If this corrects {first}, send it as a corrected claim "
+            f"(frequency code 7) with {first} as the original claim; otherwise withdraw it."
+        ),
+        details={"dup_of_claim_id": first},
+    )
+
+
+def check_auth_units(claim: dict, ctx: ClaimContext, cfg: dict) -> RuleHit | None:
+    remaining = ctx.auth_remaining_before
+    if remaining is None or ctx.auth is None:
+        return None
+    if check_auth_invalid(claim, ctx, cfg) is not None:
+        return None  # the balance of an authorization that does not fit the claim means nothing
+    if claim["units"] <= remaining:
+        return None
+    left = max(remaining, 0)
+    auth_id = ctx.auth["auth_id"]
+    if left == 0:
+        fix = f"{auth_id} is used up. Request a new authorization or an extension before billing."
+    else:
+        fix = f"Only {left} units remain on {auth_id}; bill {left} units or request an extension."
+    return RuleHit(
+        rule_id="auth_units", denial_code="D02",
+        message=(
+            f"Billed {claim['units']} units, but {auth_id} has {left} of "
+            f"{ctx.auth['units_authorized']} units left after earlier paid claims."
+        ),
+        citation=payer_config(cfg, claim["payer_id"])["citations"]["auth"] + "; billing_basics.md",
+        fix=fix,
+        details={"auth_remaining_before": remaining, "units_authorized": ctx.auth["units_authorized"]},
+    )
+
+
+def check_daily_max(claim: dict, ctx: ClaimContext, cfg: dict) -> RuleHit | None:
+    rule = payer_config(cfg, claim["payer_id"]).get("daily_max_units")
+    if not rule or ctx.daily_paid_before is None:
+        return None
+    limit, already = rule["limit"], ctx.daily_paid_before
+    if already + claim["units"] <= limit:
+        return None
+    room = max(limit - already, 0)
+    return RuleHit(
+        rule_id="daily_max", denial_code="D06",
+        message=(
+            f"The patient already has {already} paid units on {_fmt(claim['date_of_service'])}; "
+            f"{claim['units']} more would pass the daily maximum of {limit}."
+        ),
+        citation=rule["citation"],
+        fix=(f"At most {room} more units can be paid for this day; reduce the claim to {room} units."
+             if room else "The daily maximum is already reached; this day cannot be billed further."),
+        details={"daily_paid_before": already, "limit": limit},
+    )
+
+
+def check_contract(claim: dict, ctx: ClaimContext, cfg: dict) -> RuleHit | None:
+    for rule in payer_config(cfg, claim["payer_id"]).get("contract_rules") or []:
+        if not rule.get("enabled", True):
+            continue
+        if rule.get("effective_from") and claim["date_of_service"] < rule["effective_from"]:
+            continue
+        if rule.get("agencies") and claim["agency_id"] not in rule["agencies"]:
+            continue
+        multiple = rule["units_multiple_of"]
+        if claim["units"] % multiple == 0:
+            continue
+        lower = claim["units"] - claim["units"] % multiple
+        return RuleHit(
+            rule_id=rule["id"], denial_code=rule["denial_code"],
+            message=f"Billed {claim['units']} units, which is not a whole number of hours ({multiple} units per hour).",
+            citation=rule["citation"],
+            fix=f"Bill whole hours only: {lower} units, if the visit supports it. Confirm against the agency contract.",
+            details={"units_multiple_of": multiple},
+        )
+    return None
+
+
 Rule = Callable[[dict, ClaimContext, dict], "RuleHit | None"]
 
 # Stateless rules: need only the claim, its EVV and its authorization.
 STATELESS_RULES: list[Rule] = [
     check_auth_missing, check_auth_invalid, check_timely_filing,
-    check_evv_missing, check_modifier, check_evv_units,
+    check_evv_missing, check_modifier, check_evv_units, check_contract,
 ]
-ALL_RULES: list[Rule] = list(STATELESS_RULES)
+# Stateful rules: also need the timeline state before the claim.
+STATEFUL_RULES: list[Rule] = [check_duplicate, check_auth_units, check_daily_max]
+ALL_RULES: list[Rule] = STATELESS_RULES + STATEFUL_RULES
 
 
 def evaluate_rules(claim: dict[str, Any], ctx: ClaimContext, cfg: dict,
