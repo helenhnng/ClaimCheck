@@ -6,3 +6,9 @@ __pycache__/
 .ipynb_checkpoints/
 *.egg-info/
 .pytest_cache/
+
+# Not part of the repo: the brief and scratch work
+2. INSTRUCTIONS/
+3. WORKING FOLDER/
+.venv
+.venv.nosync/
