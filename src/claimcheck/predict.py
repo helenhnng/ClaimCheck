@@ -15,7 +15,7 @@ import pandas as pd
 
 from claimcheck import paths, review
 from claimcheck.config import default_config, precedence_for
-from claimcheck.data import load_auths, load_claims, load_evv
+from claimcheck.data import DataError, clean_claims, load_auths, load_claims, load_evv, read_raw_csv
 from claimcheck.evv import NO_EVV, EvvDay, build_evv_index
 from claimcheck.rules import ALLOWED_CLAIM_FIELDS, ClaimContext, evaluate_rules, pick_hit
 from claimcheck.timeline import TimelineState
@@ -143,15 +143,38 @@ def validate_predictions(pred: pd.DataFrame, expected_ids: set[str]) -> None:
         raise ValueError("denial_code must be blank if and only if status is paid")
 
 
+def check_claims(raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+    """Check a raw file of unsubmitted claims. Returns ``(claims, detailed, report)``.
+
+    ``raw`` holds text cells in the layout of ``claims_to_check.csv`` (see
+    ``data.read_raw_csv``). The claims are cleaned, placed on the timeline after
+    the adjudicated history, and run through the rules. ``claims`` is the
+    cleaned input, ``detailed`` one prediction row per claim (sorted by
+    ``claim_id``), ``report`` the cleaning summary.
+    """
+    claims, report = clean_claims(raw, "to_check")
+    if claims.empty:
+        raise DataError("The file has no claims.")
+    history = load_claims("history")
+    already = sorted(set(claims["claim_id"]) & set(history["claim_id"]))
+    if already:
+        raise DataError(
+            f"{len(already)} claim(s) are already in the adjudicated history, e.g. {already[:5]}. "
+            "Upload only claims that have not been submitted."
+        )
+    known = dict(zip(history["claim_id"], history["status"]))
+    timeline = pd.concat([history[list(claims.columns)], claims], ignore_index=True)
+    everything = predict_claims(timeline, load_evv(), load_auths(), known_status=known)
+    detailed = everything[everything["claim_id"].isin(set(claims["claim_id"]))]
+    detailed = detailed.sort_values("claim_id").reset_index(drop=True)
+    validate_predictions(detailed[PREDICTION_COLUMNS], set(claims["claim_id"]))
+    return claims, detailed, report
+
+
 def main() -> None:
     argparse.ArgumentParser(description=__doc__).parse_args()
-    to_check = load_claims("to_check")
-    timeline, known = load_timeline()
-    everything = predict_claims(timeline, load_evv(), load_auths(), known_status=known)
-    detailed = everything[everything["claim_id"].isin(set(to_check["claim_id"]))]
-    detailed = detailed.sort_values("claim_id").reset_index(drop=True)
+    _, detailed, _ = check_claims(read_raw_csv(paths.CLAIMS_TO_CHECK_CSV))
     predictions = detailed[PREDICTION_COLUMNS]
-    validate_predictions(predictions, set(to_check["claim_id"]))
     predictions.to_csv(paths.output_path("predictions.csv"), index=False)
     detailed.to_csv(paths.output_path("predictions_detailed.csv"), index=False)
     print(f"Wrote {len(predictions)} predictions to outputs/predictions.csv")

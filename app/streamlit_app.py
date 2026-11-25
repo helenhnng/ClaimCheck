@@ -2,16 +2,22 @@
 
     streamlit run app/streamlit_app.py
 
-Reads the files written by ``python -m claimcheck.predict``. It shows what the
-checker found; it never edits or submits a claim.
+The biller uploads a CSV of unsubmitted claims. The file is cleaned and checked
+on the spot against each payer's rules, using the EVV visits, authorizations
+and adjudicated claims already on file. Nothing is pre-computed, and the screen
+never edits or submits a claim.
 """
 from __future__ import annotations
+
+import io
+import time
 
 import pandas as pd
 import streamlit as st
 
 from claimcheck import paths
-from claimcheck.data import load_auths, load_claims, load_evv
+from claimcheck.data import CLAIM_COLUMNS, DataError, load_auths, load_claims, load_evv
+from claimcheck.predict import PREDICTION_COLUMNS, check_claims
 
 CODE_MEANINGS = {
     "D01": "No verified EVV visit for the date of service",
@@ -40,15 +46,85 @@ ACTION_HELP = {
 }
 
 
-@st.cache_data
-def load_everything() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    detailed_path = paths.OUTPUTS_DIR / "predictions_detailed.csv"
-    if not detailed_path.is_file():
-        raise FileNotFoundError("Run `python -m claimcheck.predict` first: no predictions found.")
-    detailed = pd.read_csv(detailed_path, keep_default_na=False)
-    claims = load_claims("to_check")
+@st.cache_data(show_spinner=False)
+def reference_data() -> tuple[pd.DataFrame, pd.DataFrame, int]:
+    """Data already on file: EVV visits, authorizations and the count of past claims."""
+    return load_evv(), load_auths(), len(load_claims("history"))
+
+
+@st.cache_data(show_spinner=False)
+def run_check(file_bytes: bytes) -> tuple[pd.DataFrame, pd.DataFrame, dict, float]:
+    """Clean and check an uploaded file. Cached per file content, so filters do not recompute."""
+    started = time.perf_counter()
+    raw = pd.read_csv(io.BytesIO(file_bytes), dtype=str, keep_default_na=False)
+    claims, detailed, report = check_claims(raw)
     merged = claims.merge(detailed.drop(columns=["payer_id"]), on="claim_id", validate="one_to_one")
-    return merged, load_evv(), load_auths()
+    return merged, detailed, report, time.perf_counter() - started
+
+
+def upload_panel(n_visits: int, n_auths: int, n_history: int) -> tuple[str, bytes] | None:
+    """The landing section: pick a file. Returns ``(name, bytes)``, or ``None`` if none yet.
+
+    Removing the file from the uploader clears the results. (``claims_file`` in the
+    session state is only a hook for the automated tests, which cannot click "Browse".)
+    """
+    uploaded = st.file_uploader("Upload unsubmitted claims (.csv)", type=["csv"])
+    current = (uploaded.name, uploaded.getvalue()) if uploaded is not None else st.session_state.get("claims_file")
+    if current is None:
+        st.info(
+            "Upload a CSV of claims that have not been submitted yet. Each claim is checked when you "
+            "upload it; nothing is stored or sent to a payer."
+        )
+        left, right = st.columns(2)
+        with left:
+            st.markdown("**What the file needs**")
+            st.markdown("One row per claim, with these columns:")
+            st.code(", ".join(CLAIM_COLUMNS), language=None)
+            st.caption(
+                "Payer names, dates in either YYYY-MM-DD or MM/DD/YYYY, and stray spaces are tidied "
+                "automatically. A value that cannot be read stops the check with a message naming it."
+            )
+        with right:
+            st.markdown("**What each claim is checked against**")
+            st.markdown(
+                f"- {n_visits:,} EVV visit records on file\n"
+                f"- {n_auths:,} payer authorizations on file\n"
+                f"- {n_history:,} claims already decided by the payers (for duplicates, units used "
+                "on each authorization, and daily totals)\n"
+                "- The rules in the three payers' manuals and bulletins"
+            )
+        return None
+    return current
+
+
+def cleaning_note(report: dict, seconds: float, name: str) -> None:
+    tidy = []
+    if report["payer_names_mapped"]:
+        tidy.append(f"{report['payer_names_mapped']} payer names standardised")
+    us_dates = sum(report["us_format_dates"].values())
+    if us_dates:
+        tidy.append(f"{us_dates} dates converted from MM/DD/YYYY")
+    spaces = report["service_codes_normalised"] + report["modifiers_normalised"]
+    if spaces:
+        tidy.append(f"{spaces} codes or modifiers trimmed")
+    if report["exact_duplicate_rows_dropped"]:
+        tidy.append(f"{report['exact_duplicate_rows_dropped']} repeated rows removed")
+    st.success(
+        f"Checked **{report['rows_out']} claims** from `{name}` in {seconds:.1f} seconds."
+        + (" Tidied on the way in: " + "; ".join(tidy) + "." if tidy else "")
+    )
+
+
+def downloads(detailed: pd.DataFrame) -> None:
+    left, right, _ = st.columns([1, 1, 3])
+    left.download_button(
+        "Download predictions.csv", detailed[PREDICTION_COLUMNS].to_csv(index=False),
+        file_name="predictions.csv", mime="text/csv",
+    )
+    right.download_button(
+        "Download with reasons and fixes", detailed.to_csv(index=False),
+        file_name="predictions_detailed.csv", mime="text/csv",
+    )
 
 
 def summary(df: pd.DataFrame) -> None:
@@ -194,8 +270,23 @@ def main() -> None:
         "Checks unsubmitted claims against each payer's rules and predicts paid or denied. "
         "It recommends; the biller decides. Nothing is changed or submitted from this screen."
     )
-    df, evv, auths = load_everything()
+    evv, auths, n_history = reference_data()
 
+    upload = upload_panel(len(evv), len(auths), n_history)
+    if upload is None:
+        accuracy_panel()
+        return
+
+    try:
+        with st.spinner("Checking claims against the payer rules..."):
+            df, detailed, report, seconds = run_check(upload[1])
+    except (DataError, pd.errors.ParserError, UnicodeDecodeError) as problem:
+        st.error(f"This file could not be checked. {problem}")
+        st.caption("Nothing was guessed or skipped. Correct the file and upload it again.")
+        return
+
+    cleaning_note(report, seconds, upload[0])
+    downloads(detailed)
     summary(df)
     st.divider()
 
@@ -207,20 +298,22 @@ def main() -> None:
     claim_table(filtered)
 
     st.subheader("Claim detail")
-    order = filtered.sort_values(["status", "claim_id"])  # denied first
+    order = filtered.sort_values(["status", "claim_id"]).set_index("claim_id")  # denied first
     chosen = st.selectbox(
-        "Choose a claim", order["claim_id"],
+        "Choose a claim", order.index,
         format_func=lambda c: (
-            f"{c}  |  {order.set_index('claim_id').loc[c, 'payer_id']}  |  "
-            f"{ACTION_LABELS[order.set_index('claim_id').loc[c, 'action']]}"
-            + (f"  |  {order.set_index('claim_id').loc[c, 'denial_code']}"
-               if order.set_index('claim_id').loc[c, 'denial_code'] else "")
+            f"{c}  |  {order.loc[c, 'payer_id']}  |  {ACTION_LABELS[order.loc[c, 'action']]}"
+            + (f"  |  {order.loc[c, 'denial_code']}" if order.loc[c, 'denial_code'] else "")
         ),
     )
     claim_detail(df.set_index("claim_id", drop=False).loc[chosen], evv, auths)
 
     st.divider()
-    with st.expander("How accurate is it? (held-back test set, scored once)"):
+    accuracy_panel()
+
+
+def accuracy_panel() -> None:
+    with st.expander("How accurate is it? (held-back test set of past claims, scored once)"):
         metrics_path = paths.OUTPUTS_DIR / "metrics_test.md"
         if metrics_path.is_file():
             st.markdown(metrics_path.read_text(encoding="utf-8").split("## Confusion matrix")[0])

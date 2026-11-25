@@ -6,7 +6,8 @@ from claimcheck import paths
 def test_project_root_holds_the_spaced_folders():
     assert paths.RAW_DIR.name == "1. RAW DATA"
     assert paths.RAW_DIR.is_dir()
-    assert paths.INSTRUCTIONS_DIR.is_dir()
+    # The brief (2. INSTRUCTIONS) is not shipped with the code, so only its name is checked.
+    assert paths.INSTRUCTIONS_DIR.name == "2. INSTRUCTIONS"
     assert (paths.PROJECT_ROOT / "pyproject.toml").is_file()
 
 

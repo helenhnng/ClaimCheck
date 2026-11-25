@@ -1,7 +1,7 @@
-pandas
-numpy
-scikit-learn
-pyyaml
-streamlit
-pytest
-anthropic
+# Exact versions the project was built and tested with (Python 3.14).
+pandas==3.1.1
+numpy>=1.26        # left open: the newest numpy needs Python 3.12+; built with 2.5.5
+scikit-learn==1.9.1
+PyYAML==6.0.4
+streamlit==1.67.0
+pytest==9.2.0

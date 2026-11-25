@@ -9,13 +9,12 @@ description = "Pre-submission claim checker for home-care agency billing teams (
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "pandas",
-    "numpy",
-    "scikit-learn",
-    "pyyaml",
-    "streamlit",
-    "pytest",
-    "anthropic",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scikit-learn>=1.4",
+    "pyyaml>=6.0",
+    "streamlit>=1.50",
+    "pytest>=8.0",
 ]
 
 [tool.setuptools.packages.find]
